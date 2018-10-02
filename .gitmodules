@@ -1,0 +1,6 @@
+[submodule "um-ts"]
+	path = um-ts
+	url = https://github.com/umbiliko/um-ts
+[submodule "typings/um-ts"]
+	path = typings/um-ts
+	url = https://github.com/umbiliko/um-ts
