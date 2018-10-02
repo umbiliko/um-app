@@ -1,0 +1,11 @@
+import { DEC } from './types';
+import { Actions } from './typings';
+
+export default (path: string, amount: number): Actions[typeof DEC] => ({
+    payload: {
+        amount,
+        path,
+    },
+    type: DEC,
+    
+});

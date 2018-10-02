@@ -1,0 +1,16 @@
+export const CLEAR_VALUE: string = 'DELETE_VALUE';
+export const SET_HAS_FAILURE: string = 'SET_HAS_FAILURE';
+export const SET_HAS_MESSAGE: string = 'SET_HAS_MESSAGE';
+export const SET_HAS_SUCCESS: string = 'SET_HAS_SUCCESS';
+export const SET_HAS_WARNING: string = 'SET_HAS_WARNING';
+export const SET_IS_DIRTY: string = 'SET_IS_DIRTY';
+export const SET_IS_DISABLED: string = 'SET_IS_DISABLED';
+export const SET_IS_DONE: string = 'SET_IS_DONE';
+export const SET_IS_ENABLED: string = 'SET_IS_ENABLED';
+export const SET_IS_HIDDEN: string = 'SET_IS_HIDDEN';
+export const SET_IS_INVALID: string = 'SET_IS_INVALID';
+export const SET_IS_LOADING: string = 'SET_IS_LOADING';
+export const SET_IS_PRISTINE: string = 'SET_IS_PRISTINE';
+export const SET_IS_VALID: string = 'SET_IS_VALID';
+export const SET_IS_VISIBLE: string = 'SET_IS_VISIBLE';
+export const SET_VALUE: string = 'SET_VALUE';

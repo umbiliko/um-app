@@ -1,0 +1,1 @@
+export const flatten = (matrix: any[][]): any[] => [].concat.apply([], matrix);

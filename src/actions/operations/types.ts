@@ -1,0 +1,15 @@
+export const CONCAT = 'CONCAT';
+export const DEC = 'DEC';
+export const DELETE = 'DELETE';
+export const INC = 'INC';
+export const MERGE = 'MERGE';
+export const PUSH = 'PUSH';
+export const REVERSE = 'REVERSE';
+export const REMOVE = 'REMOVE';
+export const SET = 'SET';
+export const SETUP = 'SETUP';
+export const SHIFT = 'SHIFT';
+export const SLICE = 'SLICE';
+export const SORT = 'SORT';
+export const SPLICE = 'SPLICE';
+export const UNSHIFT = 'UNSHIFT';
