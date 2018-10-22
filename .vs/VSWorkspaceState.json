@@ -3,9 +3,15 @@
     "",
     "\\src",
     "\\src\\containers",
-    "\\src\\containers\\StartGraph",
-    "\\um-ts"
+    "\\src\\containers\\Diagram\\components",
+    "\\src\\containers\\Diagram\\utils\\__tests__",
+    "\\src\\containers\\ForceGraph\\propTypes",
+    "\\src\\containers\\ForceGraph\\__mocks__",
+    "\\src\\pages",
+    "\\src\\pages\\StartPage",
+    "\\src\\pages\\StartPage\\components",
+    "\\src\\pages\\StartPage\\containers"
   ],
-  "SelectedNode": "\\src\\containers\\StartBar.tsx",
+  "SelectedNode": "\\src\\pages\\StartPage\\StartPage.tsx",
   "PreviewInSolutionExplorer": false
 }

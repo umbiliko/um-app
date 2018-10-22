@@ -1,9 +1,9 @@
-import configureStore from '../store';
+import { configureStore } from '../store';
 //import getMenuItems from './menuItems';
 import grants from './grants';
 import locales from './locales';
 // import { RMWIcon } from '../components/Icons';
-import { themes } from './themes';
+import themes from './themes';
 
 const config = {
     firebase_config: {
@@ -37,7 +37,7 @@ const config = {
     drawer_width: 240,
     // appIcon: RMWIcon,
     configureStore,
-    getMenuItems,
+    // getMenuItems,
     locales,
     themes,
     grants,
