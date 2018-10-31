@@ -1,5 +1,5 @@
 {
-  "name": "um-app",
+  "name": "@um/app",
   "version": "0.1.0",
   "description": "Umbiliko application",
   "private": true,
