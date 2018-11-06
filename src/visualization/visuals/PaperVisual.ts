@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface PaperProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, PaperClassKey> {
-  component?: React.ReactType<PaperProps>;
+export interface PaperVisual extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, PaperClassKey> {
+  component?: React.ReactType<PaperVisual>;
   elevation?: number;
   square?: boolean;
 }
@@ -36,7 +35,3 @@ export type PaperClassKey =
   | 'elevation22'
   | 'elevation23'
   | 'elevation24';
-
-declare const Paper: React.ComponentType<PaperProps>;
-
-export default Paper;

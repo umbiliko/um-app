@@ -1,4 +1,4 @@
-import { Palette } from './createPalette';
+import { Palette } from '../visuals/Palette';
 import { Overwrite, Omit } from '..';
 import { CSSProperties } from './withStyles';
 

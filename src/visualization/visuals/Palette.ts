@@ -94,5 +94,3 @@ export interface PaletteOptions {
   background?: Partial<TypeBackground>;
   getContrastText?: (background: string) => string;
 }
-
-export default function createPalette(palette: PaletteOptions): Palette;

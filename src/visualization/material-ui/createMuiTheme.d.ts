@@ -1,6 +1,6 @@
 import { Breakpoints, BreakpointsOptions } from './createBreakpoints';
 import { Mixins, MixinsOptions } from './createMixins';
-import { Palette, PaletteOptions } from './createPalette';
+import { Palette, PaletteOptions } from '../visuals/Palette';
 import { Typography, TypographyOptions } from './createTypography';
 import { Shadows } from './shadows';
 import { Shape, ShapeOptions } from './shape';

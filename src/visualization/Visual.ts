@@ -1,8 +1,10 @@
 import { ReactInstance } from 'react';
+
 export const AppBar = 'AppBar';
 export const Controls = 'Controls';
 
-export interface Visual {
+
+export interface Visual extends SimpleObject {
     AppBar: {
         key: KeyType | KeyArray;
         type: typeof AppBar;
@@ -13,6 +15,6 @@ export interface Visual {
     }
 }
 
-export type Visualizer = (visual: Visual[keyof Visual]) => ReactInstance;
+export type Visualizer = (visual: Visual[keyof Visual]) => ReactInstance; // React.ComponentType<AppBarProps>
 
-export type Presenter = (schema: {}, effects: {}, root: Visual[keyof Visual]) => ReactInstance;
+export type Presenter = (schema: {}, events: {}, root: Visual[keyof Visual]) => ReactInstance;

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface BottomNavigationProps
-  extends StandardProps<
+export interface BottomNavigationVisual
+  extends StandardVisual<
       React.HTMLAttributes<HTMLDivElement>,
       BottomNavigationClassKey,
       'onChange'
@@ -14,7 +14,3 @@ export interface BottomNavigationProps
 }
 
 export type BottomNavigationClassKey = 'root';
-
-declare const BottomNavigation: React.ComponentType<BottomNavigationProps>;
-
-export default BottomNavigation;
