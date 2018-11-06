@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function useFormInput<T extends boolean | number | string> (initialValue: T | null = null) {
     const [value, setValue] = useState(initialValue);

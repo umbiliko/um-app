@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Component, useContext, useEffect, useReducer, useState } from 'react';
 import { IconBackward, IconForeward, IconPause, IconPlay } from '@um/ui/icons';
 import { Alert, ProgressBar, VisuallyHidden } from '@um/ux/components';
-import { Carousel, CarouselProps, CarouselState, Controls, Slide, SlideNav, SlideNavItem, Slides, } from '@um/ux/containers/Carousel';
+import { Carousel, CarouselProps, CarouselState, Controls, Slide, SlideNav, SlideNavItem, Slides, } from 'src/containers/Carousel';
 import useCarousel from '@um/ux/effects/useCarousel';
 
 function AppCarousel(props: CarouselProps) {
