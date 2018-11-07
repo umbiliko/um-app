@@ -1,28 +1,29 @@
 import * as React from 'react';
 
 export interface SlideNavItemProps extends React.HTMLAttributes<HTMLLIElement> {
-    id: string;
-    image: string;
     isCurrent: boolean;
     takenFocus: boolean;
     title: string;
 }
 
+const style(isCurrent: boolean) = {
+    color: '#fff', opacity: isCurrent ? 1 : 0.5
+}
+
 export default function SlideNavItem({
-                                   id,
-                                   image,
                                    isCurrent,
                                    takenFocus,
                                    title,
-                                   children
+                                   ...props
                                }: SlideNavItemProps) {
     return (
         <li
-            aria-labelledby={id}
-            aria-hidden={!isCurrent}
             className="slide"
-            style={{ backgroundImage: `url(${image})` }}
             tabIndex={-1}
-        >{children}</li>
+            style={style(isCurrent)}
+            {...props}
+        >
+
+        </li>
     );
 }

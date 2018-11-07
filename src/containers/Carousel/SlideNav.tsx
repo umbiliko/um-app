@@ -1,11 +1,6 @@
 import * as React from 'react';
 
-export interface SlideNavProps extends React.HTMLAttributes<HTMLLIElement> {
-    id: string;
-    image: string;
-    isCurrent: boolean;
-    takenFocus: boolean;
-    title: string;
+export interface SlideNavProps extends React.HTMLAttributes<HTMLUListElement> {
 }
 
 export default function SlideNav({
@@ -17,12 +12,12 @@ export default function SlideNav({
                                          children
                                      }: SlideNavProps) {
     return (
-        <li
+        <ul
             aria-labelledby={id}
             aria-hidden={!isCurrent}
             className="slide"
             style={{ backgroundImage: `url(${image})` }}
             tabIndex={-1}
-        >{children}</li>
+        >{children}</ul>
     );
 }

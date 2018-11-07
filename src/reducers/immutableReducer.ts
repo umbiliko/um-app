@@ -1,4 +1,4 @@
-import { isImmutable, isList, isMap, List, Map } from 'immutable';
+import { isImmutable, Map } from 'immutable';
 
 const RESET = 'RESET';
 const SET = 'SET';

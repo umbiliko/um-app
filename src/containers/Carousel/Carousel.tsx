@@ -1,13 +1,20 @@
 import * as React from 'react';
 
-export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 
+interface Slide {
+    content: any;
+    image: string;
+    title: string;
 }
 
-export default function Controls({
+export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
+    slides: Slide[];
+}
+
+export default function Carousel({
                                      children
                                  }: CarouselProps) {
     return (
-        <ul>{children}</ul>
+        <div>{children}</div>
     );
 }

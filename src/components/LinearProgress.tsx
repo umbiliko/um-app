@@ -3,14 +3,14 @@ import useProgress from 'src/effects/useProgress';
 
 export interface LinearProgressProps extends React.HTMLAttributes<HTMLDivElement> {
     animate: boolean;
-    time: number;
+    duration: number;
 }
 
 export default function LinearProgress({
                                    animate,
-                                   time
+                                   duration
                                }: LinearProgressProps) {
-    const progress = useProgress(animate, time);
+    const progress = useProgress(animate, duration);
 
     return (
         <div

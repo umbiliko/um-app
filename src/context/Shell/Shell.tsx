@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useReducer } from 'react';
 import LocaleContext from '../LocaleContext';
-import VisualContext from '../VisualContext';
+import PresenterContext from '../PresenterContext';
 import reducer, { ShellState, setLocale, setPresenter, setTheme } from './reducer'
 
 export interface ShellProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -26,9 +26,9 @@ export default ({ children, locale, presenter, theme }: ShellProps) => {
 
     return (
         <LocaleContext.Provider value={ this.state.locale } >
-            <VisualContext.Provider value={state.presenter} >
+            <PresenterContext.Provider value={state.presenter} >
                 { children }
-            </VisualContext.Provider>
+            </PresenterContext.Provider>
         </LocaleContext.Provider>
     );
 }

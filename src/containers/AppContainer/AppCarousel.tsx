@@ -1,22 +1,39 @@
 import * as React from 'react';
-import { Component, useContext, useEffect, useReducer, useState } from 'react';
-import { IconBackward, IconForeward, IconPause, IconPlay } from '@um/ui/icons';
-import { Alert, ProgressBar, VisuallyHidden } from '@um/ux/components';
-import { Carousel, CarouselProps, CarouselState, Controls, Slide, SlideNav, SlideNavItem, Slides, } from 'src/containers/Carousel';
-import useCarousel from '@um/ux/effects/useCarousel';
+import { IconBackward, IconForward, IconPause, IconPlay } from 'src/icons';
+import { Alert, IconButton, LinearProgress, SpacerGif, VisuallyHidden } from 'src/components';
+import { Carousel, CarouselProps, Controls, Slide, SlideNav, SlideNavItem, Slides, } from 'src/containers/Carousel';
+import useCarousel from 'src/effects/useCarousel';
+
+const SLIDE_DURATION = 3000;
 
 function AppCarousel(props: CarouselProps) {
-    const { pause, play, goBackward, goForward, goTo, state } = useCarousel(props.slides.length);
+    const { pause, play, goBackward, goForward, goTo, state } = useCarousel(props.slides.length, SLIDE_DURATION);
 
     return (
-        <Carousel>
+        <Carousel
+            aria-label="Application Overview"
+        >
+            <Slides>
+                {props.slides.map(({ content, image, title }, index) => (
+                        <Slide
+                            children={content}
+                            id={`image-${index}`}
+                            image={image}
+                            isCurrent={index === state.currentIndex}
+                            takenFocus={false}
+                            title={title}
+                        />
+                    )
+                )}
+            </Slides>
             <SlideNav>
-                {slides.map((slide, index) => (
+                {props.slides.map((slide, index: number) => (
                     <SlideNavItem
                         key={index}
                         isCurrent={index === state.currentIndex}
                         aria-label={`Slide ${index + 1}`}
                         onClick={() => goTo(index)}
+                        takenFocus={false}
                     />
                 ))}
             </SlideNav>
@@ -42,20 +59,18 @@ function AppCarousel(props: CarouselProps) {
                 />
                 <IconButton
                     aria-label="Next Slide"
-                    onClick={() => {
-                        dispatch({ type: NEXT });
-                    }}
-                    children={<IconForeward />}
+                    onClick={goForward}
+                    children={<IconForward />}
                 />
             </Controls>
-            <ProgressBar
+            <LinearProgress
                 animate={state.isPlaying}
+                duration={SLIDE_DURATION}
                 key={state.currentIndex + state.isPlaying}
-                time={SLIDE_DURATION}
             />
             <VisuallyHidden>
                 <Alert>
-                    Item {state.currentIndex + 1} of {SVGElementInstanceList.length}
+                    Item {state.currentIndex + 1} of {props.slides.length}
                 </Alert>
             </VisuallyHidden>
         </Carousel>

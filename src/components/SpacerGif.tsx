@@ -1,13 +1,11 @@
 import * as React from 'react';
 
-export interface ControlsProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SpaceGifProps extends React.HTMLAttributes<HTMLDivElement> {
 
 }
 
-export default function Controls({
-                                     children
-                                 }: ControlsProps) {
+export default function SpaceGif(props: SpaceGifProps) {
     return (
-        <ul>{children}</ul>
+        <div {...props} />
     );
 }
