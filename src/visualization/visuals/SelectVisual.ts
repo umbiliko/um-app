@@ -4,8 +4,7 @@ import { InputVisual } from './InputVisual';
 import { MenuVisual } from './MenuVisual';
 import { SelectInputVisual } from './SelectInputVisual';
 
-export interface SelectVisual
-  extends StandardVisual<InputVisual, SelectClassKey, 'value' | 'onChange'>,
+export interface SelectVisual extends StandardVisual<InputVisual, SelectClassKey, 'value' | 'onChange'>,
     Pick<SelectInputVisual, 'onChange'> {
   autoWidth?: boolean;
   displayEmpty?: boolean;
