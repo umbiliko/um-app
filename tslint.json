@@ -6,5 +6,19 @@
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js"
     ]
+  },
+  "rules": {
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "max-line-length": {
+      "options": [
+        120
+      ]
+    },
+    "quotemark": [
+      "single"
+    ]
   }
 }

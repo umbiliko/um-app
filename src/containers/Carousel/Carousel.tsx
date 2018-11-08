@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-
 interface Slide {
     content: any;
     image: string;

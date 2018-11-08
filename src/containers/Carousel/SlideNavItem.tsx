@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export interface SlideNavItemProps extends React.HTMLAttributes<HTMLLIElement> {
     isCurrent: boolean;
-    takenFocus: boolean;
+    takeFocus: boolean;
     title: string;
 }
 
@@ -12,7 +12,7 @@ const style(isCurrent: boolean) = {
 
 export default function SlideNavItem({
                                    isCurrent,
-                                   takenFocus,
+                                   takeFocus,
                                    title,
                                    ...props
                                }: SlideNavItemProps) {

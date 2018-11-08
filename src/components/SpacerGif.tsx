@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-export interface SpaceGifProps extends React.HTMLAttributes<HTMLDivElement> {
-
+export interface SpacerGifProps extends React.HTMLAttributes<HTMLDivElement> {
+    width: string;
 }
 
-export default function SpaceGif(props: SpaceGifProps) {
+export default function SpacerGif({ width, ...props }: SpacerGifProps) {
     return (
-        <div {...props} />
+        <div style={{ width }} {...props} />
     );
 }

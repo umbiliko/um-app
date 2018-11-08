@@ -1,41 +1,64 @@
 import * as React from 'react';
-import { IconBackward, IconForward, IconPause, IconPlay } from 'src/icons';
-import { Alert, IconButton, LinearProgress, SpacerGif, VisuallyHidden } from 'src/components';
-import { Carousel, CarouselProps, Controls, Slide, SlideNav, SlideNavItem, Slides, } from 'src/containers/Carousel';
+import { useState } from 'react';
+import {
+    Alert,
+    IconButton,
+    LinearProgress,
+    SpacerGif,
+    VisuallyHidden
+} from 'src/components';
+import {
+    Carousel,
+    CarouselProps,
+    Controls,
+    Slide,
+    SlideNav,
+    SlideNavItem,
+    Slides
+} from 'src/containers/Carousel';
 import useCarousel from 'src/effects/useCarousel';
+import { IconBackward, IconForward, IconPause, IconPlay } from 'src/icons';
+
 
 const SLIDE_DURATION = 3000;
 
-function AppCarousel(props: CarouselProps) {
+export default function AppCarousel(props: CarouselProps) {
+    const [methodCache] = useState(new WeakMap<{ index: number }, { goTo: React.MouseEventHandler }>());
     const { pause, play, goBackward, goForward, goTo, state } = useCarousel(props.slides.length, SLIDE_DURATION);
 
     return (
         <Carousel
             aria-label="Application Overview"
+            slides={[]}
         >
             <Slides>
-                {props.slides.map(({ content, image, title }, index) => (
-                        <Slide
-                            children={content}
-                            id={`image-${index}`}
-                            image={image}
-                            isCurrent={index === state.currentIndex}
-                            takenFocus={false}
-                            title={title}
-                        />
-                    )
-                )}
-            </Slides>
-            <SlideNav>
-                {props.slides.map((slide, index: number) => (
-                    <SlideNavItem
-                        key={index}
+                {props.slides.map(({ content, image, title }, index: number) => (
+                    <Slide
+                        children={content}
+                        id={`image-${index}`}
+                        image={image}
                         isCurrent={index === state.currentIndex}
-                        aria-label={`Slide ${index + 1}`}
-                        onClick={() => goTo(index)}
-                        takenFocus={false}
+                        takeFocus={false}
+                        title={title}
                     />
                 ))}
+            </Slides>
+            <SlideNav>
+                {props.slides.map(({ title }, index: number) => {
+                    if (!methodCache.has({ index })) {
+                        methodCache.set({ index }, { goTo: () => goTo(index) });
+                    }
+                    return (
+                        <SlideNavItem
+                            key={index}
+                            isCurrent={index === state.currentIndex}
+                            aria-label={`Slide ${index + 1}`}
+                            onClick={methodCache.get({ index })!.goTo}
+                            takeFocus={false}
+                            title={title}
+                        />
+                    );
+                })}
             </SlideNav>
             <Controls>
                 {state.isPlaying ? (
