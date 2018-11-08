@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { Orientation } from '../Stepper';
-import { TransitionProps } from '../transitions/transition';
+import { StandardVisual } from './StandardVisual';
+import { Orientation } from './StepperVisual';
+import { TransitionVisual } from './TransitionVisual';
 
-export interface StepContentProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, StepContentClasskey> {
+export interface StepContentVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, StepContentClasskey> {
   active?: boolean;
   alternativeLabel?: boolean;
   children: React.ReactNode;
@@ -12,13 +12,9 @@ export interface StepContentProps
   last?: boolean;
   optional?: boolean;
   orientation?: Orientation;
-  TransitionComponent?: React.ComponentType<TransitionProps>;
-  transitionDuration?: TransitionProps['timeout'] | 'auto';
-  TransitionProps?: TransitionProps;
+  TransitionComponent?: React.ComponentType<TransitionVisual>;
+  transitionDuration?: TransitionVisual['timeout'] | 'auto';
+  TransitionProps?: TransitionVisual;
 }
 
 export type StepContentClasskey = 'root' | 'last' | 'transition';
-
-declare const StepContent: React.ComponentType<StepContentProps>;
-
-export default StepContent;

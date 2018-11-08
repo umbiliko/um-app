@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps, PropTypes } from '..';
+import { StandardVisual, PropTypes } from '..';
 
 export interface NotchedOutlineProps
-  extends StandardProps<React.FieldsetHTMLAttributes<HTMLFieldSetElement>, NotchedOutlineClassKey> {
+  extends StandardVisual<React.FieldsetHTMLAttributes<HTMLFieldSetElement>, NotchedOutlineClassKey> {
   disabled?: boolean;
   error?: boolean;
   focused?: boolean;

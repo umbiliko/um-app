@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 import { Orientation } from '../Stepper';
-import { ButtonBaseProps } from '../ButtonBase';
+import { ButtonBaseVisual } from './ButtonBase';
 
 export type StepButtonIcon = React.ReactElement<any> | string | number | null;
 
-export interface StepButtonProps extends StandardProps<ButtonBaseProps, StepButtonClasskey> {
+export interface StepButtonVisual extends StandardVisual<ButtonBaseVisual, StepButtonClasskey> {
   active?: boolean;
   alternativeLabel?: boolean;
   completed?: boolean;

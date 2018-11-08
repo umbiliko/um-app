@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface DialogActionsProps
+export interface DialogActionsVisual
   extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, DialogActionsClassKey> {
   disableActionSpacing?: boolean;
 }

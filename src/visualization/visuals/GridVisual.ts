@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
-import { Breakpoint } from '../styles/createBreakpoints';
+import { Breakpoint } from './BreakpointVisual';
 
 export type GridItemsAlignment = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
 
@@ -28,15 +28,15 @@ export type GridWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
 
 export type GridSize = 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export interface GridProps
-  extends StandardProps<
+export interface GridVisual
+  extends StandardVisual<
       React.HTMLAttributes<HTMLElement> & Partial<Record<Breakpoint, boolean | GridSize>>,
       GridClassKey,
       'hidden'
     > {
   alignContent?: GridContentAlignment;
   alignItems?: GridItemsAlignment;
-  component?: string | React.ComponentType<Omit<GridProps, StrippedProps>>;
+  component?: string | React.ComponentType<Omit<GridVisual, StrippedProps>>;
   container?: boolean;
   direction?: GridDirection;
   item?: boolean;

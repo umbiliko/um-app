@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
-import { PropTypes } from '..';
+import { Margin } from './PropTypes';
 
-export interface FormControlProps
-  extends StandardProps<React.HtmlHTMLAttributes<HTMLDivElement>, FormControlClassKey> {
-  component?: React.ReactType<FormControlProps>;
+export interface FormControlVisual
+  extends StandardVisual<React.HtmlHTMLAttributes<HTMLDivElement>, FormControlClassKey> {
+  component?: React.ReactType<FormControlVisual>;
   disabled?: boolean;
   error?: boolean;
   fullWidth?: boolean;
-  margin?: PropTypes.Margin;
+  margin?: Margin;
   onBlur?: React.EventHandler<any>;
   onFocus?: React.EventHandler<any>;
   required?: boolean;
@@ -17,6 +17,3 @@ export interface FormControlProps
 
 export type FormControlClassKey = 'root' | 'marginNormal' | 'marginDense' | 'fullWidth';
 
-declare const FormControl: React.ComponentType<FormControlProps>;
-
-export default FormControl;

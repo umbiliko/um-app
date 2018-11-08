@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { ListProps, ListClassKey } from '../List';
+import { StandardVisual } from './StandardVisual';
+import { ListVisual, ListClassKey } from '../List';
 
-export interface MenuListProps extends StandardProps<ListProps, MenuListClassKey, 'onKeyDown'> {
+export interface MenuListVisual extends StandardVisual<ListVisual, MenuListClassKey, 'onKeyDown'> {
   onKeyDown?: React.ReactEventHandler<React.KeyboardEvent<any>>;
 }
 

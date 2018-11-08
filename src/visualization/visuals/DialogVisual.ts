@@ -2,10 +2,10 @@ import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 import { PaperVisual } from './PaperVisual';
 import { ModalVisual } from './ModalVisual';
-import { TransitionHandlerProps, TransitionVisual } from './TransitionVisual';
+import { TransitionHandlerVisual, TransitionVisual } from './TransitionVisual';
 
-export interface DialogProps
-  extends StandardVisual<ModalVisual & Partial<TransitionHandlerProps>, DialogClassKey, 'children'> {
+export interface DialogVisual
+  extends StandardVisual<ModalVisual & Partial<TransitionHandlerVisual>, DialogClassKey, 'children'> {
   children?: React.ReactNode;
   fullScreen?: boolean;
   fullWidth?: boolean;

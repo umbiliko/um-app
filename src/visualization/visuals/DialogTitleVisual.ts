@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface DialogTitleProps
+export interface DialogTitleVisual
   extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, DialogTitleClassKey> {
   disableTypography?: boolean;
 }

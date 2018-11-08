@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface CircularProgressProps
+export interface CircularProgressVisual
   extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, CircularProgressClassKey> {
   color?: 'primary' | 'secondary' | 'inherit';
   disableShrink?: boolean;
@@ -22,7 +22,3 @@ export type CircularProgressClassKey =
   | 'circleStatic'
   | 'circleIndeterminate'
   | 'circleDisableShrink';
-
-declare const CircularProgress: React.ComponentType<CircularProgressProps>;
-
-export default CircularProgress;

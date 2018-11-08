@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { PaperProps } from '../Paper';
+import { StandardVisual } from './StandardVisual';
+import { PaperVisual } from './Paper';
 
-export interface SnackbarContentProps extends StandardProps<PaperProps, SnackbarContentClassKey> {
+export interface SnackbarContentVisual extends StandardVisual<PaperVisual, SnackbarContentClassKey> {
   action?: React.ReactNode;
   message?: React.ReactNode;
 }

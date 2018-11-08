@@ -1,11 +1,9 @@
-import * as React from 'react';
-import { PortalProps } from '../Portal';
+import { ReactElement, ReactInstance } from 'react';
 
-export interface PortalProps {
-  children: React.ReactElement<any>;
-  container?: React.ReactInstance | (() => React.ReactInstance) | null;
+export interface PortalVisual {
+  children: ReactElement<any>;
+  container?: ReactInstance | (() => ReactInstance) | null;
   disablePortal?: boolean;
   onRendered?: () => void;
 }
 
-export default class Portal extends React.Component<PortalProps> {}

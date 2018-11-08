@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 import { Theme } from '../styles/createMuiTheme';
-import { TransitionProps } from '../transitions/transition';
+import { TransitionVisual } from './TransitionVisual';
 
-export interface CollapseProps extends StandardVisual<TransitionProps, CollapseClassKey, 'timeout'> {
+export interface CollapseVisual extends StandardVisual<TransitionVisual, CollapseClassKey, 'timeout'> {
   children?: React.ReactNode;
   collapsedHeight?: string;
   component?: React.ReactType<CollapseProps>;

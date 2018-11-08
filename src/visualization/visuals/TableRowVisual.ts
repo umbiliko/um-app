@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface TableRowProps extends StandardProps<TableRowBaseProps, TableRowClassKey> {
+export interface TableRowVisual extends StandardVisual<TableRowBaseVisual, TableRowClassKey> {
   component?: React.ReactType<TableRowBaseProps>;
   hover?: boolean;
   selected?: boolean;

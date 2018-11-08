@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { StandardProps, PropTypes } from '..';
+import { Color } from './PropTypes';
+import { StandardVisual } from './StandardVisual';
 
-export interface SvgIconProps
-  extends StandardProps<React.SVGProps<SVGSVGElement>, SvgIconClassKey> {
-  color?: PropTypes.Color | 'action' | 'disabled' | 'error';
-  component?: React.ReactType<SvgIconProps>;
+export interface SvgIconVisual
+  extends StandardVisual<React.SVGProps<SVGSVGElement>, SvgIconClassKey> {
+  color?: Color | 'action' | 'disabled' | 'error';
+  component?: React.ReactType<SvgIconVisual>;
   fontSize?: 'inherit' | 'default' | 'small' | 'large';
   nativeColor?: string;
   shapeRendering?: string;
@@ -22,7 +23,3 @@ export type SvgIconClassKey =
   | 'fontSizeInherit'
   | 'fontSizeSmall'
   | 'fontSizeLarge';
-
-declare const SvgIcon: React.ComponentType<SvgIconProps>;
-
-export default SvgIcon;

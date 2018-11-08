@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Theme } from '../styles/createMuiTheme';
-import { TransitionProps } from '../transitions/transition';
+import { TransitionVisual } from './TransitionVisual';
 
-export interface SlideProps extends TransitionProps {
+export interface SlideVisual extends TransitionProps {
   direction: 'left' | 'right' | 'up' | 'down';
   theme?: Theme;
 }

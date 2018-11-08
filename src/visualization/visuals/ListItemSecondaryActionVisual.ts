@@ -1,10 +1,6 @@
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface ListItemSecondaryActionProps
-  extends StandardProps<{}, ListItemSecondaryActionClassKey> {}
+export interface ListItemSecondaryActionVisual
+  extends StandardVisual<{}, ListItemSecondaryActionClassKey> {}
 
 export type ListItemSecondaryActionClassKey = 'root';
-
-declare const ListItemSecondaryAction: React.ComponentType<ListItemSecondaryActionProps>;
-
-export default ListItemSecondaryAction;

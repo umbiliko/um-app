@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface LinearProgressProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, LinearProgressClassKey> {
+export interface LinearProgressVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, LinearProgressClassKey> {
   color?: 'primary' | 'secondary';
   value?: number;
   valueBuffer?: number;
@@ -27,6 +27,6 @@ export type LinearProgressClassKey =
   | 'bar1Buffer'
   | 'bar2Buffer';
 
-declare const LinearProgress: React.ComponentType<LinearProgressProps>;
+declare const LinearProgress: React.ComponentType<LinearProgressVisual>;
 
 export default LinearProgress;

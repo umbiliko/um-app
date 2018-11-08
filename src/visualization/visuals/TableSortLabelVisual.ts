@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { ButtonBaseProps } from '../ButtonBase';
-import { SvgIconProps } from '../SvgIcon';
+import { StandardVisual } from './StandardVisual';
+import { ButtonBaseVisual } from './ButtonBaseVisual';
+import { SvgIconVisual } from './SvgIconVisual';
 
-export interface TableSortLabelProps
-  extends StandardProps<ButtonBaseProps, TableSortLabelClassKey> {
+export interface TableSortLabelVisual
+  extends StandardVisual<ButtonBaseVisual, TableSortLabelClassKey> {
   active?: boolean;
   direction?: 'asc' | 'desc';
   hideSortIcon?: boolean;
-  IconComponent?: React.ComponentType<SvgIconProps>;
+  IconComponent?: React.ComponentType<SvgIconVisual>;
 }
 
 export type TableSortLabelClassKey =
@@ -18,6 +18,6 @@ export type TableSortLabelClassKey =
   | 'iconDirectionDesc'
   | 'iconDirectionAsc';
 
-declare const TableSortLabel: React.ComponentType<TableSortLabelProps>;
+declare const TableSortLabel: React.ComponentType<TableSortLabelVisual>;
 
 export default TableSortLabel;

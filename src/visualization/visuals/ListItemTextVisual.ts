@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { TypographyProps } from '../Typography';
+import { StandardVisual } from './StandardVisual';
+import { TypographyVisual } from './TypographyVisual';
 
-export interface ListItemTextProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ListItemTextClassKey> {
+export interface ListItemTextVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, ListItemTextClassKey> {
   disableTypography?: boolean;
   inset?: boolean;
   primary?: React.ReactNode;
-  primaryTypographyProps?: Partial<TypographyProps>;
+  primaryTypographyProps?: Partial<TypographyVisual>;
   secondary?: React.ReactNode;
-  secondaryTypographyProps?: Partial<TypographyProps>;
+  secondaryTypographyProps?: Partial<TypographyVisual>;
 }
 
 export type ListItemTextClassKey =
@@ -20,6 +20,6 @@ export type ListItemTextClassKey =
   | 'secondary'
   | 'textDense';
 
-declare const ListItemText: React.ComponentType<ListItemTextProps>;
+declare const ListItemText: React.ComponentType<ListItemTextVisual>;
 
 export default ListItemText;

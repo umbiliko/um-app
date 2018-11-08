@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface GridListTileProps
-  extends StandardProps<React.HTMLAttributes<HTMLLIElement>, GridListTileClassKey> {
+export interface GridListTileVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLLIElement>, GridListTileClassKey> {
   cols?: number;
-  component?: React.ReactType<GridListTileProps>;
+  component?: React.ReactType<GridListTileVisual>;
   rows?: number;
 }
 

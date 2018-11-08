@@ -1,16 +1,13 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface DividerProps
-  extends StandardProps<React.HTMLAttributes<HTMLHRElement>, DividerClassKey> {
+export interface DividerVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLHRElement>, DividerClassKey> {
   absolute?: boolean;
-  component?: React.ReactType<DividerProps>;
+  component?: React.ReactType<DividerVisual>;
   inset?: boolean;
   light?: boolean;
 }
 
 export type DividerClassKey = 'root' | 'absolute' | 'inset' | 'light';
 
-declare const Divider: React.ComponentType<DividerProps>;
-
-export default Divider;

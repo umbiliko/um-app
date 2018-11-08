@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
 export interface TextareaProps
-  extends StandardProps<
+  extends StandardVisual<
       React.TextareaHTMLAttributes<HTMLTextAreaElement>,
       TextareaClassKey,
       'rows'

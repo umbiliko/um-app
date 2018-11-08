@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface FormControlLabelProps
-  extends StandardProps<
+export interface FormControlLabelVisual
+  extends StandardVisual<
       React.LabelHTMLAttributes<HTMLLabelElement>,
       FormControlLabelClassKey,
       'onChange'
@@ -20,6 +20,3 @@ export interface FormControlLabelProps
 
 export type FormControlLabelClassKey = 'root' | 'start' | 'disabled' | 'label';
 
-declare const FormControlLabel: React.ComponentType<FormControlLabelProps>;
-
-export default FormControlLabel;

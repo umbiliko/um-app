@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface InputAdornmentProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, InputAdornmentClassKey> {
-  component?: React.ReactType<InputAdornmentProps>;
+export interface InputAdornmentVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, InputAdornmentClassKey> {
+  component?: React.ReactType<InputAdornmentVisual>;
   disableTypography?: boolean;
   position: 'start' | 'end';
   variant?: 'standard' | 'outlined' | 'filled';
@@ -11,6 +11,3 @@ export interface InputAdornmentProps
 
 export type InputAdornmentClassKey = 'root' | 'positionStart' | 'positionEnd' | 'filled';
 
-declare const InputAdornment: React.ComponentType<InputAdornmentProps>;
-
-export default InputAdornment;

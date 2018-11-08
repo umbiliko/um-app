@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 import { Breakpoint } from '../styles/createBreakpoints';
 
-export interface HiddenProps extends StandardProps<{}, never> {
+export interface HiddenVisual extends StandardVisual<{}, never> {
   implementation?: 'js' | 'css';
   initialWidth?: Breakpoint;
   lgDown?: boolean;

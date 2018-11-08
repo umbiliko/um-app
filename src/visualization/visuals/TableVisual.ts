@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface TableProps extends StandardProps<TableBaseProps, TableClassKey> {
+export interface TableVisual extends StandardVisual<TableBaseVisual, TableClassKey> {
   component?: React.ReactType<TableBaseProps>;
   padding?: Padding;
 }

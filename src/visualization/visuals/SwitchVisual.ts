@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { SwitchBaseProps, SwitchBaseClassKey } from '../internal/SwitchBase';
+import { StandardVisual } from './StandardVisual';
+import { SwitchBaseVisual, SwitchBaseClassKey } from './SwitchBaseVisual';
 
-export interface SwitchProps
-  extends StandardProps<SwitchBaseProps, SwitchClassKey, 'checkedIcon' | 'color' | 'icon'> {
+export interface SwitchVisual
+  extends StandardVisual<SwitchBaseVisual, SwitchClassKey, 'checkedIcon' | 'color' | 'icon'> {
   checkedIcon?: React.ReactNode;
   color?: 'primary' | 'secondary' | 'default';
   icon?: React.ReactNode;

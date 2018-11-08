@@ -1,21 +1,21 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { ButtonBaseProps } from '../ButtonBase/ButtonBase';
-import { TabIndicatorProps } from './TabIndicatorVisual';
+import { StandardVisual } from './StandardVisual';
+import { ButtonBaseVisual } from './ButtonBaseVisual';
+import { TabIndicatorVisual } from './TabIndicatorVisual';
 
-export interface TabsProps
-  extends StandardProps<ButtonBaseProps, TabsClassKey, 'onChange' | 'action' | 'component'> {
+export interface TabsVisual
+  extends StandardVisual<ButtonBaseVisual, TabsClassKey, 'onChange' | 'action' | 'component'> {
   action?: (actions: TabsActions) => void;
   centered?: boolean;
   children?: React.ReactNode;
-  component?: React.ReactType<TabsProps>;
+  component?: React.ReactType<TabsVisual>;
   fullWidth?: boolean;
   indicatorColor?: 'secondary' | 'primary' | string;
   onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
   scrollable?: boolean;
   ScrollButtonComponent?: React.ReactType;
   scrollButtons?: 'auto' | 'on' | 'off';
-  TabIndicatorProps?: Partial<TabIndicatorProps>;
+  TabIndicatorProps?: Partial<TabIndicatorVisual>;
   textColor?: 'secondary' | 'primary' | 'inherit' | string;
   value: any;
   width?: string;
@@ -35,7 +35,3 @@ export type TabsClassKey =
 export interface TabsActions {
   updateIndicator(): void;
 }
-
-declare const Tabs: React.ComponentType<TabsProps>;
-
-export default Tabs;

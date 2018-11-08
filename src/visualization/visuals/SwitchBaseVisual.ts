@@ -1,9 +1,9 @@
 import { ChangeEvent, InputHTMLAttributes, ReactNode, Ref } from 'react';
 import { StandardVisual } from './StandardVisual';
-import { IconButtonProps } from './IconButtonVisual';
+import { IconButtonVisual } from './IconButtonVisual';
 
 export interface SwitchBaseVisual
-  extends StandardVisual<IconButtonProps, SwitchBaseClassKey, 'onChange' | 'value'> {
+  extends StandardVisual<IconButtonVisual, SwitchBaseClassKey, 'onChange' | 'value'> {
   autoFocus?: boolean;
   checked?: boolean | string;
   checkedIcon: ReactNode;

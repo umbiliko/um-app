@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Omit } from '..';
 import { Theme } from '../styles/createMuiTheme';
-import { TransitionProps } from '../transitions/transition';
+import { TransitionVisual } from './TransitionVisual';
 
-export interface GrowProps extends Omit<TransitionProps, 'timeout'> {
+export interface GrowVisual extends Omit<TransitionVisual, 'timeout'> {
   theme?: Theme;
   timeout?: TransitionProps['timeout'] | 'auto';
 }

@@ -1,8 +1,8 @@
-import { StandardProps } from '..';
-import { ButtonBaseProps } from '../ButtonBase/ButtonBase';
+import { StandardVisual } from './StandardVisual';
+import { ButtonBaseVisual } from './ButtonBase/ButtonBase';
 
 export interface TabScrollButtonProps
-  extends StandardProps<ButtonBaseProps, TabScrollButtonClassKey> {
+  extends StandardVisual<ButtonBaseVisual, TabScrollButtonClassKey> {
   direction?: 'left' | 'right';
   visible?: boolean;
 }

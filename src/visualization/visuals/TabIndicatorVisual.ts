@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface TabIndicatorProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, TabIndicatorClassKey> {
+export interface TabIndicatorVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, TabIndicatorClassKey> {
   color: 'secondary' | 'primary' | string;
   style: { left: number; width: number };
 }

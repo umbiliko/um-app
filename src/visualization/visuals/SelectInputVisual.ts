@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { MenuProps } from '../Menu';
+import { MenuVisual } from './MenuVisual';
 
-export interface SelectInputProps {
+export interface SelectInputVisual {
   autoFocus?: boolean;
   autoWidth: boolean;
   disabled?: boolean;
   IconComponent?: React.ReactType;
   inputRef?: (
-    ref: HTMLSelectElement | { node: HTMLInputElement; value: SelectInputProps['value'] },
+    ref: HTMLSelectElement | { node: HTMLInputElement; value: SelectInputVisual['value'] },
   ) => void;
-  MenuProps?: Partial<MenuProps>;
+  MenuProps?: Partial<MenuVisual>;
   multiple: boolean;
   name?: string;
   native: boolean;
@@ -20,13 +20,13 @@ export interface SelectInputProps {
   onOpen?: (event: React.ChangeEvent<{}>) => void;
   open?: boolean;
   readOnly?: boolean;
-  renderValue?: (value: SelectInputProps['value']) => React.ReactNode;
+  renderValue?: (value: SelectInputVisual['value']) => React.ReactNode;
   SelectDisplayProps?: React.HTMLAttributes<HTMLDivElement>;
   tabIndex?: number;
   value?: string | number | boolean | Array<string | number | boolean>;
   variant?: 'standard' | 'outlined' | 'filled';
 }
 
-declare const SelectInput: React.ComponentType<SelectInputProps>;
+declare const SelectInput: React.ComponentType<SelectInputVisual>;
 
 export default SelectInput;

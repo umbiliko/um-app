@@ -49,7 +49,7 @@ export type TransitionHandlerKeys =
     | 'onExiting'
     | 'onExited';
 
-export type TransitionHandlerProps = Pick<TransitionProps, TransitionHandlerKeys>;
+export type TransitionHandlerVisual = Pick<TransitionVisual, TransitionHandlerKeys>;
 
 export type TransitionKeys =
     | 'in'
@@ -59,6 +59,6 @@ export type TransitionKeys =
     | 'addEndListener'
     | TransitionHandlerKeys;
 
-export interface TransitionVisual extends TransitionActions, Partial<Pick<TransitionProps, TransitionKeys>> {
+export interface TransitionVisual extends TransitionActions, Partial<Pick<TransitionVisual, TransitionKeys>> {
     style?: CSSProperties;
 }

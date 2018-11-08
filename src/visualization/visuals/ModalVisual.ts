@@ -1,31 +1,29 @@
 import * as React from 'react';
-import { StandardProps, ModalManager } from '..';
-import { BackdropProps } from '../Backdrop';
-import { PortalProps } from '../Portal';
+import { StandardVisual } from './StandardVisual';
+import { default as ModalManagerVisual } from './ModalManagerVisual';
+import { BackdropVisual } from './BackdropVisual';
+import { PortalVisual } from './PortalVisual';
 
-export interface ModalProps
-  extends StandardProps<React.HtmlHTMLAttributes<HTMLDivElement>, ModalClassKey> {
-  BackdropComponent?: React.ReactType<BackdropProps>;
-  BackdropProps?: Partial<BackdropProps>;
-  container?: PortalProps['container'];
+export interface ModalVisual
+  extends StandardVisual<React.HtmlHTMLAttributes<HTMLDivElement>, ModalClassKey> {
+  BackdropComponent?: React.ReactType<BackdropVisual>;
+  BackdropProps?: Partial<BackdropVisual>;
+  container?: PortalVisual['container'];
   disableAutoFocus?: boolean;
   disableBackdropClick?: boolean;
   disableEnforceFocus?: boolean;
   disableEscapeKeyDown?: boolean;
-  disablePortal?: PortalProps['disablePortal'];
+  disablePortal?: PortalVisual['disablePortal'];
   disableRestoreFocus?: boolean;
   hideBackdrop?: boolean;
   keepMounted?: boolean;
-  manager?: ModalManager;
+  manager?: ModalManagerVisual;
   onBackdropClick?: React.ReactEventHandler<{}>;
   onClose?: React.ReactEventHandler<{}>;
   onEscapeKeyDown?: React.ReactEventHandler<{}>;
-  onRendered?: PortalProps['onRendered'];
+  onRendered?: PortalVisual['onRendered'];
   open: boolean;
 }
 
 export type ModalClassKey = 'root' | 'hidden';
 
-declare const Modal: React.ComponentType<ModalProps>;
-
-export default Modal;

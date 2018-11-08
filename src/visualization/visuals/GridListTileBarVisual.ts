@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface GridListTileBarProps extends StandardProps<{}, GridListTileBarClassKey> {
+export interface GridListTileBarVisual extends StandardVisual<{}, GridListTileBarClassKey> {
   actionIcon?: React.ReactNode;
   actionPosition?: 'left' | 'right';
   subtitle?: React.ReactNode;

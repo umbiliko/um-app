@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 import { ListItemVisual } from './ListItemVisual';
 
-export interface MenuItemProps extends StandardVisual<ListItemVisual, MenuItemClassKey> {
+export interface MenuItemVisual extends StandardVisual<ListItemVisual, MenuItemClassKey> {
   component?: React.ReactType<MenuItemProps>;
   role?: string;
 }

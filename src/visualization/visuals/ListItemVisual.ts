@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { ButtonBaseProps } from '../ButtonBase';
+import { StandardVisual } from './StandardVisual';
+import { ButtonBaseVisual } from './ButtonBaseVisual';
 
-export interface ListItemProps
-  extends StandardProps<
-      ButtonBaseProps & React.LiHTMLAttributes<HTMLElement>,
+export interface ListItemVisual
+  extends StandardVisual<
+      ButtonBaseVisual & React.LiHTMLAttributes<HTMLElement>,
       ListItemClassKey,
       'component'
     > {
   button?: boolean;
-  component?: React.ReactType<ListItemProps>;
+  component?: React.ReactType<ListItemVisual>;
   ContainerComponent?: React.ReactType<React.HTMLAttributes<HTMLDivElement>>;
   ContainerProps?: React.HTMLAttributes<HTMLDivElement>;
   dense?: boolean;
@@ -32,7 +32,3 @@ export type ListItemClassKey =
   | 'button'
   | 'secondaryAction'
   | 'selected';
-
-declare const ListItem: React.ComponentType<ListItemProps>;
-
-export default ListItem;

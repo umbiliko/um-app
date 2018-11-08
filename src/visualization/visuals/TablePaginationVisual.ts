@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { TableCellProps } from '../TableCell';
-import { IconButtonProps } from '../IconButton';
-import { SelectProps } from '../Select';
+import { StandardVisual } from './StandardVisual';
+import { TableCellVisual } from './TableCellVisual';
+import { IconButtonVisual } from './IconButtonVisual';
+import { SelectVisual } from './SelectVisual';
 
 export interface LabelDisplayedRowsArgs {
   from: number;
@@ -11,24 +11,24 @@ export interface LabelDisplayedRowsArgs {
   page: number;
 }
 
-export interface TablePaginationProps
-  extends StandardProps<TablePaginationBaseProps, TablePaginationClassKey> {
-  ActionsComponent?: React.ReactType<TablePaginationBaseProps>;
-  backIconButtonProps?: Partial<IconButtonProps>;
-  component?: React.ReactType<TablePaginationBaseProps>;
+export interface TablePaginationVisual
+  extends StandardVisual<TablePaginationBaseVisual, TablePaginationClassKey> {
+  ActionsComponent?: React.ReactType<TablePaginationBaseVisual>;
+  backIconButtonProps?: Partial<IconButtonVisual>;
+  component?: React.ReactType<TablePaginationBaseVisual>;
   count: number;
   labelDisplayedRows?: (paginationInfo: LabelDisplayedRowsArgs) => React.ReactNode;
   labelRowsPerPage?: React.ReactNode;
-  nextIconButtonProps?: Partial<IconButtonProps>;
+  nextIconButtonProps?: Partial<IconButtonVisual>;
   onChangePage: (event: React.MouseEvent<HTMLButtonElement> | null, page: number) => void;
   onChangeRowsPerPage?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   page: number;
   rowsPerPage: number;
   rowsPerPageOptions?: number[];
-  SelectProps?: Partial<SelectProps>;
+  SelectProps?: Partial<SelectVisual>;
 }
 
-export type TablePaginationBaseProps = TableCellProps;
+export type TablePaginationBaseVisual = TableCellVisual;
 
 export type TablePaginationClassKey =
   | 'root'
@@ -42,6 +42,3 @@ export type TablePaginationClassKey =
   | 'selectIcon'
   | 'actions';
 
-declare const TablePagination: React.ComponentType<TablePaginationProps>;
-
-export default TablePagination;

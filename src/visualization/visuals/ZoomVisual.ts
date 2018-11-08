@@ -1,11 +1,6 @@
-import * as React from 'react';
-import { Theme } from '../styles/createMuiTheme';
-import { TransitionProps } from '../transitions/transition';
+import { Theme } from './Theme';
+import { TransitionVisual } from './TransitionVisual';
 
-export interface ZoomProps extends TransitionProps {
+export interface ZoomVisual extends TransitionVisual {
   theme?: Theme;
 }
-
-declare const Zoom: React.ComponentType<ZoomProps>;
-
-export default Zoom;

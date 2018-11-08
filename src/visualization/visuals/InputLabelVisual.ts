@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 import { FormLabelVisual } from './FormLabelVisual';
 
-export interface InputLabelProps extends StandardVisual<FormLabelVisual, InputLabelClassKey> {
+export interface InputLabelVisual extends StandardVisual<FormLabelVisual, InputLabelClassKey> {
   disableAnimation?: boolean;
   disabled?: boolean;
   error?: boolean;

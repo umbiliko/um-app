@@ -1,17 +1,13 @@
 import * as React from 'react';
 
-export interface NativeSelectInputProps {
+export interface NativeSelectInputVisual {
   disabled?: boolean;
   IconComponent?: React.ReactType;
   inputRef?: (
-    ref: HTMLSelectElement | { node: HTMLInputElement; value: NativeSelectInputProps['value'] },
+    ref: HTMLSelectElement | { node: HTMLInputElement; value: NativeSelectInputVisual['value'] },
   ) => void;
   name?: string;
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>, child: React.ReactNode) => void;
   value?: string | number | boolean;
   variant?: 'standard' | 'outlined' | 'filled';
 }
-
-declare const NativeSelectInput: React.ComponentType<NativeSelectInputProps>;
-
-export default NativeSelectInput;

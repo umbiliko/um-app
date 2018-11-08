@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 import { PropTypes } from '..';
-import { InputBaseProps } from '../InputBase';
+import { InputBaseVisual } from './InputBase';
 
-export interface FilledInputProps extends StandardProps<InputBaseProps, FilledInputClassKey> {}
+export interface FilledInputVisual extends StandardVisual<InputBaseVisual, FilledInputClassKey> {}
 
 export type FilledInputClassKey =
   | 'root'

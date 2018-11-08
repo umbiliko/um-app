@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { TransitionProps } from '../transitions/transition';
+import { StandardVisual } from './StandardVisual';
+import { TransitionVisual } from './TransitionVisual';
 
-export interface TooltipProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, TooltipClassKey, 'title'> {
+export interface TooltipVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, TooltipClassKey, 'title'> {
   children: React.ReactElement<any>;
   disableFocusListener?: boolean;
   disableHoverListener?: boolean;
@@ -33,7 +33,7 @@ export interface TooltipProps
   PopperProps?: object;
   title: React.ReactNode;
   TransitionComponent?: React.ReactType;
-  TransitionProps?: TransitionProps;
+  TransitionProps?: TransitionVisual;
 }
 
 export type TooltipClassKey =
@@ -44,7 +44,3 @@ export type TooltipClassKey =
   | 'tooltipPlacementRight'
   | 'tooltipPlacementTop'
   | 'tooltipPlacementBottom';
-
-declare const Tooltip: React.ComponentType<TooltipProps>;
-
-export default Tooltip;

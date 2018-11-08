@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { StandardProps, PropTypes } from '..';
+import { Color } from './PropTypes';
+import { StandardVisual } from './StandardVisual';
 
-export interface IconProps
-  extends StandardProps<React.HTMLAttributes<HTMLSpanElement>, IconClassKey> {
-  color?: PropTypes.Color | 'action' | 'disabled' | 'error';
-  component?: React.ReactType<IconProps>;
+export interface IconVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLSpanElement>, IconClassKey> {
+  color?: Color | 'action' | 'disabled' | 'error';
+  component?: React.ReactType<IconVisual>;
   fontSize?: 'inherit' | 'default' | 'small' | 'large';
 }
 
@@ -19,6 +20,3 @@ export type IconClassKey =
   | 'fontSizeSmall'
   | 'fontSizeLarge';
 
-declare const Icon: React.ComponentType<IconProps>;
-
-export default Icon;

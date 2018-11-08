@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { PaperProps } from '../Paper';
-import { ButtonProps } from '../Button';
-import { LinearProgressProps } from '../LinearProgress';
+import { StandardVisual } from './StandardVisual';
+import { PaperVisual } from './Paper';
+import { ButtonVisual } from './Button';
+import { LinearProgressVisual } from './LinearProgress';
 
-export interface MobileStepperProps extends StandardProps<PaperProps, MobileStepperClassKey> {
+export interface MobileStepperVisual extends StandardVisual<PaperVisual, MobileStepperClassKey> {
   activeStep?: number;
   backButton: React.ReactElement<any>;
   LinearProgressProps?: Partial<LinearProgressProps>;

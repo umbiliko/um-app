@@ -1,29 +1,30 @@
 import * as React from 'react';
-import { StandardProps, PropTypes } from '..';
-import { FormControlClassKey, FormControlProps } from '../FormControl';
-import { FormHelperTextProps } from '../FormHelperText';
-import { InputProps as StandardInputProps } from '../Input';
-import { FilledInputProps } from '../FilledInput';
-import { OutlinedInputProps } from '../OutlinedInput';
-import { InputLabelProps } from '../InputLabel';
-import { SelectProps } from '../Select';
+import { StandardVisual } from './StandardVisual';
+import { Margin } from './PropTypes';
+import { FormControlClassKey, FormControlVisual } from './FormControlVisual';
+import { FormHelperTextVisual } from './FormHelperTextVisual';
+import { InputVisual as StandardInputVisual } from './InputVisual';
+import { FilledInputVisual } from './FilledInputVisual';
+import { OutlinedInputVisual } from './OutlinedInputVisual';
+import { InputLabelVisual } from './InputLabelVisual';
+import { SelectVisual } from './SelectVisual';
 
 export interface BaseTextFieldProps
-  extends StandardProps<FormControlProps, TextFieldClassKey, 'onChange' | 'defaultValue'> {
+  extends StandardVisual<FormControlVisual, TextFieldClassKey, 'onChange' | 'defaultValue'> {
   autoComplete?: string;
   autoFocus?: boolean;
   children?: React.ReactNode;
   defaultValue?: string | number;
   disabled?: boolean;
   error?: boolean;
-  FormHelperTextProps?: Partial<FormHelperTextProps>;
+  FormHelperTextProps?: Partial<FormHelperTextVisual>;
   fullWidth?: boolean;
   helperText?: React.ReactNode;
   id?: string;
-  InputLabelProps?: Partial<InputLabelProps>;
+  InputLabelProps?: Partial<InputLabelVisual>;
   inputRef?: React.Ref<any> | React.RefObject<any>;
   label?: React.ReactNode;
-  margin?: PropTypes.Margin;
+  margin?: Margin;
   multiline?: boolean;
   name?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
@@ -32,33 +33,30 @@ export interface BaseTextFieldProps
   rows?: string | number;
   rowsMax?: string | number;
   select?: boolean;
-  SelectProps?: Partial<SelectProps>;
+  SelectProps?: Partial<SelectVisual>;
   type?: string;
   value?: Array<string | number | boolean> | string | number | boolean;
 }
 
-export interface StandardTextFieldProps extends BaseTextFieldProps {
+export interface StandardTextFieldVisual extends BaseTextFieldProps {
   variant?: 'standard';
-  InputProps?: Partial<StandardInputProps>;
-  inputProps?: StandardInputProps['inputProps'];
+  InputProps?: Partial<StandardInputVisual>;
+  inputProps?: StandardInputVisual['inputProps'];
 }
 
-export interface FilledTextFieldProps extends BaseTextFieldProps {
+export interface FilledTextFieldVisual extends BaseTextFieldProps {
   variant: 'filled';
-  InputProps?: Partial<FilledInputProps>;
-  inputProps?: FilledInputProps['inputProps'];
+  InputProps?: Partial<FilledInputVisual>;
+  inputProps?: FilledInputVisual['inputProps'];
 }
 
-export interface OutlinedTextFieldProps extends BaseTextFieldProps {
+export interface OutlinedTextFieldVisual extends BaseTextFieldProps {
   variant: 'outlined';
-  InputProps?: Partial<OutlinedInputProps>;
-  inputProps?: OutlinedInputProps['inputProps'];
+  InputProps?: Partial<OutlinedInputVisual>;
+  inputProps?: OutlinedInputVisual['inputProps'];
 }
 
-export type TextFieldProps = StandardTextFieldProps | FilledTextFieldProps | OutlinedTextFieldProps;
+export type TextFieldVisual = StandardTextFieldVisual | FilledTextFieldVisual | OutlinedTextFieldVisual;
 
 export type TextFieldClassKey = FormControlClassKey;
 
-declare const TextField: React.ComponentType<TextFieldProps>;
-
-export default TextField;

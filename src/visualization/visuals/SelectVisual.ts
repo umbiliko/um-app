@@ -1,23 +1,23 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { InputProps } from '../Input';
-import { MenuProps } from '../Menu';
-import { SelectInputProps } from './SelectInput';
+import { StandardVisual } from './StandardVisual';
+import { InputVisual } from './InputVisual';
+import { MenuVisual } from './MenuVisual';
+import { SelectInputVisual } from './SelectInputVisual';
 
-export interface SelectProps
-  extends StandardProps<InputProps, SelectClassKey, 'value' | 'onChange'>,
-    Pick<SelectInputProps, 'onChange'> {
+export interface SelectVisual
+  extends StandardVisual<InputVisual, SelectClassKey, 'value' | 'onChange'>,
+    Pick<SelectInputVisual, 'onChange'> {
   autoWidth?: boolean;
   displayEmpty?: boolean;
   IconComponent?: React.ReactType;
   input?: React.ReactNode;
-  MenuProps?: Partial<MenuProps>;
+  MenuProps?: Partial<MenuVisual>;
   multiple?: boolean;
   native?: boolean;
   onClose?: (event: React.ChangeEvent<{}>) => void;
   onOpen?: (event: React.ChangeEvent<{}>) => void;
   open?: boolean;
-  renderValue?: (value: SelectProps['value']) => React.ReactNode;
+  renderValue?: (value: SelectVisual['value']) => React.ReactNode;
   SelectDisplayProps?: React.HTMLAttributes<HTMLDivElement>;
   value?: Array<string | number | boolean> | string | number | boolean;
   variant?: 'standard' | 'outlined' | 'filled';
@@ -32,6 +32,3 @@ export type SelectClassKey =
   | 'filled'
   | 'outlined';
 
-declare const Select: React.ComponentType<SelectProps>;
-
-export default Select;

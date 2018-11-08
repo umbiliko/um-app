@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Alignment, Color } from './PropTypes';
 import { StandardVisual } from './StandardVisual';
-import {CSSProperties} from "../material-ui/withStyles";
+import { CSSProperties } from '../material-ui/withStyles';
 
 type ThemeStyle =
     | 'h1'

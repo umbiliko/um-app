@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { PaperProps } from '../Paper';
+import { StandardVisual } from './StandardVisual';
+import { PaperVisual } from './Paper';
 
 export type Orientation = 'horizontal' | 'vertical';
 
-export interface StepperProps extends StandardProps<PaperProps, StepperClasskey> {
+export interface StepperVisual extends StandardVisual<PaperVisual, StepperClasskey> {
   activeStep?: number;
   alternativeLabel?: boolean;
   children: React.ReactNode;

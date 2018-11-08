@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { ButtonBaseProps } from '../ButtonBase';
+import { StandardVisual } from './StandardVisual';
+import { ButtonBaseVisual } from './ButtonBase';
 
-export interface TabProps extends StandardProps<ButtonBaseProps, TabClassKey, 'onChange'> {
+export interface TabVisual extends StandardVisual<ButtonBaseVisual, TabClassKey, 'onChange'> {
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: string | React.ReactElement<any>;

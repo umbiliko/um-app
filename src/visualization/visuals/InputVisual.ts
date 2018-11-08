@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { PropTypes } from '..';
 import { StandardVisual } from './StandardVisual';
 import { InputBaseVisual } from './InputBaseVisual';
 
-export interface InputProps extends StandardVisual<InputBaseVisual, InputClassKey> {}
+export interface InputVisual extends StandardVisual<InputBaseVisual, InputClassKey> {}
 
 export type InputClassKey =
   | 'root'
@@ -20,6 +19,6 @@ export type InputClassKey =
   | 'inputType'
   | 'inputTypeSearch';
 
-declare const Input: React.ComponentType<InputProps>;
+declare const Input: React.ComponentType<InputVisual>;
 
 export default Input;

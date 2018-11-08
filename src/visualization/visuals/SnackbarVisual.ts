@@ -1,34 +1,34 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { SnackbarContentProps } from '../SnackbarContent';
-import { TransitionHandlerProps, TransitionProps } from '../transitions/transition';
-import { ClickAwayListenerProps } from '../ClickAwayListener';
+import { StandardVisual } from './StandardVisual';
+import { SnackbarContentVisual } from './SnackbarContentVisual';
+import { TransitionHandlerVisual, TransitionVisual } from './TransitionVisual';
+import { ClickAwayListenerVisual } from './ClickAwayListenerVisual';
 
 export interface SnackbarOrigin {
   horizontal: 'left' | 'center' | 'right';
   vertical: 'top' | 'bottom';
 }
 
-export interface SnackbarProps
-  extends StandardProps<
-      React.HTMLAttributes<HTMLDivElement> & Partial<TransitionHandlerProps>,
+export interface SnackbarVisual
+  extends StandardVisual<
+      React.HTMLAttributes<HTMLDivElement> & Partial<TransitionHandlerVisual>,
       SnackbarClassKey
     > {
-  action?: SnackbarContentProps['action'];
+  action?: SnackbarContentVisual['action'];
   anchorOrigin?: SnackbarOrigin;
   autoHideDuration?: number;
-  ClickAwayListenerProps?: Partial<ClickAwayListenerProps>;
-  ContentProps?: Partial<SnackbarContentProps>;
+  ClickAwayListenerProps?: Partial<ClickAwayListenerVisual>;
+  ContentProps?: Partial<SnackbarContentVisual>;
   disableWindowBlurListener?: boolean;
-  message?: SnackbarContentProps['message'];
+  message?: SnackbarContentVisual['message'];
   onClose?: (event: React.SyntheticEvent<any>, reason: string) => void;
   onMouseEnter?: React.MouseEventHandler<any>;
   onMouseLeave?: React.MouseEventHandler<any>;
   open: boolean;
   resumeHideDuration?: number;
   TransitionComponent?: React.ReactType;
-  transitionDuration?: TransitionProps['timeout'];
-  TransitionProps?: TransitionProps;
+  transitionDuration?: TransitionVisual['timeout'];
+  TransitionProps?: TransitionVisual;
 }
 
 export type SnackbarClassKey =
@@ -39,7 +39,3 @@ export type SnackbarClassKey =
   | 'anchorOriginBottomRight'
   | 'anchorOriginTopLeft'
   | 'anchorOriginBottomLeft';
-
-declare const Snackbar: React.ComponentType<SnackbarProps>;
-
-export default Snackbar;

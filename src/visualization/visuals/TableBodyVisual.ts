@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface TableBodyProps extends StandardProps<TableBodyBaseProps, TableBodyClassKey> {
+export interface TableBodyVisual extends StandardVisual<TableBodyBaseVisual, TableBodyClassKey> {
   component?: React.ReactType<TableBodyBaseProps>;
 }
 

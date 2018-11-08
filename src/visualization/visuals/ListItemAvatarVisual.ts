@@ -1,6 +1,6 @@
 import { StandardVisual } from './StandardVisual';
 
-export interface ListItemAvatarProps extends StandardProps<{}, ListItemAvatarClassKey> {}
+export interface ListItemAvatarVisual extends StandardVisual<{}, ListItemAvatarClassKey> {}
 
 export type ListItemAvatarClassKey = 'root' | 'icon';
 

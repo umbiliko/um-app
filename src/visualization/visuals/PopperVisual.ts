@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ReferenceObject } from 'src/visualization/visuals/PopperVisual.js';
-import { PortalProps } from '../Portal';
-import { TransitionProps } from '../transitions/transition';
+import { PortalVisual } from './Portal';
+import { TransitionVisual } from './TransitionVisual';
 
 export type PopperPlacementType =
   | 'bottom-end'
@@ -17,7 +17,7 @@ export type PopperPlacementType =
   | 'top-start'
   | 'top';
 
-export interface PopperProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface PopperVisual extends React.HTMLAttributes<HTMLDivElement> {
   transition?: boolean;
   anchorEl?: null | HTMLElement | ReferenceObject | ((element: HTMLElement) => HTMLElement);
   children:

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
 /**
  * `<TableCell>` will be rendered as an `<th>`or `<td>` depending
@@ -9,7 +9,7 @@ import { StandardProps } from '..';
  * Since it is not decided via prop, we have create loose typings
  * here.
  */
-export interface TableCellProps extends StandardProps<TableCellBaseProps, TableCellClassKey> {
+export interface TableCellVisual extends StandardVisual<TableCellBaseVisual, TableCellClassKey> {
   component?: React.ReactType<TableCellBaseProps>;
   numeric?: boolean;
   padding?: Padding;

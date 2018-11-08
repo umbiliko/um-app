@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { Orientation } from '../Stepper';
+import { StandardVisual } from './StandardVisual';
+import { Orientation } from './StepperVisual';
 
-export interface StepProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, StepClasskey> {
+export interface StepVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, StepClasskey> {
   active?: boolean;
   alternativeLabel?: boolean;
   children?: React.ReactNode;
@@ -16,7 +16,3 @@ export interface StepProps
 }
 
 export type StepClasskey = 'root' | 'horizontal' | 'vertical' | 'alternativeLabel';
-
-declare const Step: React.ComponentType<StepProps>;
-
-export default Step;

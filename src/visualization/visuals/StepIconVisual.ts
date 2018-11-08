@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface StepIconProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, StepIconClasskey> {
+export interface StepIconVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, StepIconClasskey> {
   active?: boolean;
   completed?: boolean;
   error?: boolean;
@@ -10,7 +10,3 @@ export interface StepIconProps
 }
 
 export type StepIconClasskey = 'root' | 'text' | 'active' | 'completed' | 'error';
-
-declare const StepIcon: React.ComponentType<StepIconProps>;
-
-export default StepIcon;

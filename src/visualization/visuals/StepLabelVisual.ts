@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { Orientation } from '../Stepper';
-import { StepButtonIcon } from '../StepButton';
-import { StepIconProps } from '../StepIcon';
+import { StandardVisual } from './StandardVisual';
+import { Orientation } from './StepperVisual';
+import { StepButtonIcon } from './StepButtonVisual';
+import { StepIconVisual } from './StepIconVisual';
 
-export interface StepLabelProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, StepLabelClasskey> {
+export interface StepLabelVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, StepLabelClasskey> {
   active?: boolean;
   alternativeLabel?: boolean;
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export interface StepLabelProps
   optional?: React.ReactNode;
   orientation?: Orientation;
   StepIconComponent?: React.ReactType;
-  StepIconProps?: Partial<StepIconProps>;
+  StepIconProps?: Partial<StepIconVisual>;
 }
 
 export type StepLabelClasskey =
@@ -33,6 +33,3 @@ export type StepLabelClasskey =
   | 'iconContainer'
   | 'labelContainer';
 
-declare const StepLabel: React.ComponentType<StepLabelProps>;
-
-export default StepLabel;

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 import { ButtonBaseVisual } from './ButtonBaseVisual';
-import { IconButtonPVisual } from './IconButtonVisual';
+import { IconButtonVisual } from './IconButtonVisual';
 
-export interface ExpansionPanelSummaryProps
+export interface ExpansionPanelSummaryVisual
   extends StandardVisual<ButtonBaseVisual, ExpansionPanelSummaryClassKey> {
   disabled?: boolean;
   expanded?: boolean;
@@ -19,7 +19,3 @@ export type ExpansionPanelSummaryClassKey =
   | 'disabled'
   | 'content'
   | 'expandIcon';
-
-declare const ExpansionPanelSummary: React.ComponentType<ExpansionPanelSummaryProps>;
-
-export default ExpansionPanelSummary;

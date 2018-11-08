@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
-import { CollapseProps } from '../Collapse';
-import { PaperProps } from '../Paper';
+import { CollapseVisual } from './CollapseVisual';
+import { PaperVisual } from './PaperVisual';
 
-export interface ExpansionPanelProps
-  extends StandardProps<PaperProps, ExpansionPanelClassKey, 'onChange'> {
-  CollapseProps?: Partial<CollapseProps>;
+export interface ExpansionPanelVisual
+  extends StandardVisual<PaperVisual, ExpansionPanelClassKey, 'onChange'> {
+  CollapseProps?: Partial<CollapseVisual>;
   defaultExpanded?: boolean;
   disabled?: boolean;
   expanded?: boolean;
@@ -14,6 +14,3 @@ export interface ExpansionPanelProps
 
 export type ExpansionPanelClassKey = 'root' | 'expanded' | 'disabled';
 
-declare const ExpansionPanel: React.ComponentType<ExpansionPanelProps>;
-
-export default ExpansionPanel;

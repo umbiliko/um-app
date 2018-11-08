@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface ListSubheaderProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ListSubheaderClassKey> {
+export interface ListSubheaderVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, ListSubheaderClassKey> {
   color?: 'default' | 'primary' | 'inherit';
-  component?: React.ReactType<ListSubheaderProps>;
+  component?: React.ReactType<ListSubheaderVisual>;
   disableGutters?: boolean;
   disableSticky?: boolean;
   inset?: boolean;
@@ -18,6 +18,3 @@ export type ListSubheaderClassKey =
   | 'sticky'
   | 'gutters';
 
-declare const ListSubheader: React.ComponentType<ListSubheaderProps>;
-
-export default ListSubheader;

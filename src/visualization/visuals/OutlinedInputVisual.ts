@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps, PropTypes } from '..';
-import { InputBaseProps } from '../InputBase';
+import { StandardVisual, PropTypes } from '..';
+import { InputBaseVisual } from './InputBase';
 
-export interface OutlinedInputProps extends StandardProps<InputBaseProps, OutlinedInputClassKey> {
+export interface OutlinedInputVisual extends StandardVisual<InputBaseVisual, OutlinedInputClassKey> {
   notched?: boolean;
   labelWidth: number;
 }

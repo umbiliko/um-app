@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { InputProps } from '../Input';
-import { MenuProps } from '../Menu';
-import { NativeSelectInputProps } from './NativeSelectInputVisual';
+import { StandardVisual } from './StandardVisual';
+import { InputVisual } from './InputVisual';
+import { NativeSelectInputVisual } from './NativeSelectInputVisual';
 
-export interface NativeSelectProps
-  extends StandardProps<InputProps, NativeSelectClassKey, 'value' | 'onChange'>,
-    Pick<NativeSelectInputProps, 'onChange'> {
+export interface NativeSelectVisual
+  extends StandardVisual<InputVisual, NativeSelectClassKey, 'value' | 'onChange'>,
+    Pick<NativeSelectInputVisual, 'onChange'> {
   IconComponent?: React.ReactType;
   input?: React.ReactNode;
   value?: string | number | boolean;
@@ -22,6 +21,3 @@ export type NativeSelectClassKey =
   | 'filled'
   | 'outlined';
 
-declare const NativeSelect: React.ComponentType<NativeSelectProps>;
-
-export default NativeSelect;

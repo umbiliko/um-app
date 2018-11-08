@@ -1,16 +1,12 @@
 import * as React from 'react';
-import { StandardProps } from '..';
+import { StandardVisual } from './StandardVisual';
 
-export interface ListProps
-  extends StandardProps<React.HTMLAttributes<HTMLUListElement>, ListClassKey> {
-  component?: React.ReactType<ListProps>;
+export interface ListVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLUListElement>, ListClassKey> {
+  component?: React.ReactType<ListVisual>;
   dense?: boolean;
   disablePadding?: boolean;
   subheader?: React.ReactElement<any>;
 }
 
 export type ListClassKey = 'root' | 'padding' | 'dense' | 'subheader';
-
-declare const List: React.ComponentType<ListProps>;
-
-export default List;

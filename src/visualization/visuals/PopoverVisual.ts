@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { PaperProps } from '../Paper';
-import { ModalProps } from '../Modal';
-import { TransitionHandlerProps, TransitionProps } from '../transitions/transition';
+import { StandardVisual } from './StandardVisual';
+import { PaperVisual } from './PaperVisual';
+import { ModalVisual } from './ModalVisual';
+import { TransitionHandlerVisual, TransitionVisual } from './TransitionVisual';
 
 export interface PopoverOrigin {
   horizontal: 'left' | 'center' | 'right' | number;
@@ -16,8 +16,8 @@ export interface PopoverPosition {
 
 export type PopoverReference = 'anchorEl' | 'anchorPosition' | 'none';
 
-export interface PopoverProps
-  extends StandardProps<ModalProps & Partial<TransitionHandlerProps>, PopoverClassKey, 'children'> {
+export interface PopoverVisual
+  extends StandardVisual<ModalVisual & Partial<TransitionHandlerVisual>, PopoverClassKey, 'children'> {
   action?: (actions: PopoverActions) => void;
   anchorEl?: null | HTMLElement | ((element: HTMLElement) => HTMLElement);
   anchorOrigin?: PopoverOrigin;
@@ -28,13 +28,13 @@ export interface PopoverProps
   getContentAnchorEl?: null | ((element: HTMLElement) => HTMLElement);
   marginThreshold?: number;
   modal?: boolean;
-  ModalClasses?: ModalProps['classes'];
-  PaperProps?: Partial<PaperProps>;
+  ModalClasses?: ModalVisual['classes'];
+  PaperProps?: Partial<PaperVisual>;
   role?: string;
   transformOrigin?: PopoverOrigin;
   TransitionComponent?: React.ReactType;
-  transitionDuration?: TransitionProps['timeout'] | 'auto';
-  TransitionProps?: TransitionProps;
+  transitionDuration?: TransitionVisual['timeout'] | 'auto';
+  TransitionProps?: TransitionVisual;
 }
 
 export type PopoverClassKey = 'paper';
@@ -42,7 +42,3 @@ export type PopoverClassKey = 'paper';
 export interface PopoverActions {
   updatePosition(): void;
 }
-
-declare const Popover: React.ComponentType<PopoverProps>;
-
-export default Popover;

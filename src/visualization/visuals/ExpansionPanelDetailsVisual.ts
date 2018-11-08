@@ -1,11 +1,8 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface ExpansionPanelDetailsProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ExpansionPanelDetailsClassKey> {}
+export interface ExpansionPanelDetailsVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, ExpansionPanelDetailsClassKey> {}
 
 export type ExpansionPanelDetailsClassKey = 'root';
 
-declare const ExpansionPanelDetails: React.ComponentType<ExpansionPanelDetailsProps>;
-
-export default ExpansionPanelDetails;

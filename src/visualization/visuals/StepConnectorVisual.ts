@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { Orientation } from '../Stepper';
+import { StandardVisual } from './StandardVisual';
+import { Orientation } from './StepperVisual';
 
 export type StepConnectorIcon = React.ReactElement<any> | string | number;
 
-export interface StepConnectorProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, StepConnectorClasskey> {
+export interface StepConnectorVisual
+  extends StandardVisual<React.HTMLAttributes<HTMLDivElement>, StepConnectorClasskey> {
   active?: boolean;
   alternativeLabel?: boolean;
   completed?: boolean;
@@ -25,7 +25,3 @@ export type StepConnectorClasskey =
   | 'line'
   | 'lineHorizontal'
   | 'lineVertical';
-
-declare const StepConnector: React.ComponentType<StepConnectorProps>;
-
-export default StepConnector;

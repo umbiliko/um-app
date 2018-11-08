@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StandardVisual } from './StandardVisual';
 
-export interface FormLabelProps extends StandardProps<FormLabelBaseProps, FormLabelClassKey> {
+export interface FormLabelVisual extends StandardVisual<FormLabelBaseVisual, FormLabelClassKey> {
   component?: React.ReactType<FormLabelBaseProps>;
   disabled?: boolean;
   error?: boolean;

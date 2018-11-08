@@ -1,26 +1,26 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { ModalProps } from '../Modal';
-import { SlideProps } from '../Slide';
-import { PaperProps } from '../Paper';
-import { Theme } from '../styles/createMuiTheme';
-import { TransitionHandlerProps, TransitionProps } from '../transitions/transition';
+import { StandardVisual } from './StandardVisual';
+import { ModalVisual } from './ModalVisual';
+import { SlideVisual } from './SlideVisual';
+import { PaperVisual } from './PaperVisual';
+import { Theme } from './Theme';
+import { TransitionHandlerVisual, TransitionVisual } from './TransitionVisual';
 
-export interface DrawerProps
-  extends StandardProps<
-      ModalProps & Partial<TransitionHandlerProps>,
+export interface DrawerVisual
+  extends StandardVisual<
+      ModalVisual & Partial<TransitionHandlerVisual>,
       DrawerClassKey,
       'open' | 'children'
     > {
   anchor?: 'left' | 'top' | 'right' | 'bottom';
   children?: React.ReactNode;
   elevation?: number;
-  ModalProps?: Partial<ModalProps>;
+  ModalProps?: Partial<ModalVisual>;
   open?: boolean;
-  PaperProps?: Partial<PaperProps>;
-  SlideProps?: Partial<SlideProps>;
+  PaperProps?: Partial<PaperVisual>;
+  SlideProps?: Partial<SlideVisual>;
   theme?: Theme;
-  transitionDuration?: TransitionProps['timeout'];
+  transitionDuration?: TransitionVisual['timeout'];
   variant?: 'permanent' | 'persistent' | 'temporary';
 }
 
@@ -37,6 +37,6 @@ export type DrawerClassKey =
   | 'paperAnchorDockedBottom'
   | 'modal';
 
-declare const Drawer: React.ComponentType<DrawerProps>;
+declare const Drawer: React.ComponentType<DrawerVisual>;
 
 export default Drawer;

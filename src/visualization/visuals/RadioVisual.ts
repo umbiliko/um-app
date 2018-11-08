@@ -1,16 +1,12 @@
 import * as React from 'react';
-import { StandardProps } from '..';
-import { SwitchBaseProps, SwitchBaseClassKey } from '../internal/SwitchBase';
+import { StandardVisual } from './StandardVisual';
+import { SwitchBaseVisual, SwitchBaseClassKey } from './SwitchBaseVisual';
 
-export interface RadioProps
-  extends StandardProps<SwitchBaseProps, RadioClassKey, 'checkedIcon' | 'color' | 'icon'> {
+export interface RadioVisual
+  extends StandardVisual<SwitchBaseVisual, RadioClassKey, 'checkedIcon' | 'color' | 'icon'> {
   checkedIcon?: React.ReactNode;
   color?: 'primary' | 'secondary' | 'default';
   icon?: React.ReactNode;
 }
 
 export type RadioClassKey = SwitchBaseClassKey | 'colorPrimary' | 'colorSecondary';
-
-declare const Radio: React.ComponentType<RadioProps>;
-
-export default Radio;
