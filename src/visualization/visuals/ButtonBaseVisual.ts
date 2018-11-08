@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import { StandardVisual } from './StandardVisual';
 import { TouchRippleProps } from '../material-ui/TouchRipple';
 
 export interface ButtonBaseVisual
   extends StandardVisual<
-      React.AnchorHTMLAttributes<HTMLElement> & React.ButtonHTMLAttributes<HTMLElement>,
+      AnchorHTMLAttributes<HTMLElement> & ButtonHTMLAttributes<HTMLElement>,
       ButtonBaseClassKey
     > {
   action?: (actions: ButtonBaseActions) => void;

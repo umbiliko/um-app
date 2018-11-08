@@ -15,6 +15,8 @@ function useForm<S extends SimpleObject> (initialState: S | null = null) {
         }
     };
 
+    const hasChanges = () => modified.equals(fromJS(original));
+
     const acceptChanges = () => {
         setState(modified.toJS());
     };
@@ -26,6 +28,7 @@ function useForm<S extends SimpleObject> (initialState: S | null = null) {
     return {
         acceptChanges,
         handleChanges,
+        hasChanges,
         original,
         modified,
         rejectChanges

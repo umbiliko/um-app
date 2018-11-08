@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { ChangeEvent, HTMLAttributes, ReactNode } from 'react';
 import { StandardVisual } from './StandardVisual';
 
 export interface BottomNavigationVisual
   extends StandardVisual<
-      React.HTMLAttributes<HTMLDivElement>,
+      HTMLAttributes<HTMLDivElement>,
       BottomNavigationClassKey,
       'onChange'
     > {
-  children: React.ReactNode;
-  onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
+  children: ReactNode;
+  onChange?: (event: ChangeEvent<{}>, value: any) => void;
   showLabels?: boolean;
   value?: any;
 }

@@ -1,13 +1,11 @@
 import * as React from 'react';
 
-export interface ControlsProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
 
 }
 
-export default function Controls({
-                                     children
-                                 }: ControlsProps) {
+export default function Alert({...props}: AlertProps) {
     return (
-        <ul>{children}</ul>
+        <div {...props} />
     );
 }

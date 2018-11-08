@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { ChangeEvent, ReactElement, ReactEventHandler, ReactNode } from 'react';
 import { StandardVisual } from './StandardVisual';
 import { ButtonBaseVisual } from './ButtonBaseVisual';
 
 export interface BottomNavigationActionVisual
   extends StandardVisual<ButtonBaseVisual, BottomNavigationActionClassKey, 'onChange'> {
-  icon?: string | React.ReactElement<any>;
-  label?: React.ReactNode;
-  onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
-  onClick?: React.ReactEventHandler<any>;
+  icon?: string | ReactElement<any>;
+  label?: ReactNode;
+  onChange?: (event: ChangeEvent<{}>, value: any) => void;
+  onClick?: ReactEventHandler<any>;
   selected?: boolean;
   showLabel?: boolean;
   value?: any;

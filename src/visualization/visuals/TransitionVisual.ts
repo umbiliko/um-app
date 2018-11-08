@@ -1,3 +1,5 @@
+import { CSSProperties, ReactNode } from 'react';
+
 export type EndHandler = (node: HTMLElement, done: () => void) => void;
 export type EnterHandler = (node: HTMLElement, isAppearing: boolean) => void;
 export type ExitHandler = (node: HTMLElement) => void;
@@ -7,10 +9,6 @@ export const EXITED = 'exited';
 export const ENTERING = 'entering';
 export const ENTERED = 'entered';
 export const EXITING = 'exiting';
-
-import * as React from'react';
-
-import {CSSProperties} from 'react';
 
 export interface TransitionActions {
     appear?: boolean;
@@ -25,7 +23,7 @@ export type TransitionStatus =
     typeof EXITED |
     typeof UNMOUNTED;
 
-export type TransitionChildren = React.ReactNode | ((status: TransitionStatus) => React.ReactNode);
+export type TransitionChildren = ReactNode | ((status: TransitionStatus) => ReactNode);
 
 export interface TransitionProps extends TransitionActions {
     in?: boolean;

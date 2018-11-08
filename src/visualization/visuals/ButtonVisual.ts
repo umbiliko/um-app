@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { ReactType } from 'react';
 import { StandardVisual } from './StandardVisual';
 import { Color } from './PropTypes';
 import { ButtonBaseVisual } from './ButtonBaseVisual';
 
 export interface ButtonVisual extends StandardVisual<ButtonBaseVisual, ButtonClassKey, 'component'> {
   color?: Color;
-  component?: React.ReactType<ButtonVisual>;
+  component?: ReactType<ButtonVisual>;
   disabled?: boolean;
   disableFocusRipple?: boolean;
   disableRipple?: boolean;

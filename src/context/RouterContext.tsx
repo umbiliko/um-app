@@ -1,3 +1,5 @@
-const RouterContext = React.createContext({});
+import { createContext } from 'react';
 
-export default RouterContext;
+const context = createContext({});
+
+export default context;

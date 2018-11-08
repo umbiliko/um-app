@@ -1,5 +1,5 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
-const ThemeContext = React.createContext<string>('light');
+const ThemeContext = createContext<string>('light');
 
 export default ThemeContext;

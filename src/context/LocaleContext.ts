@@ -1,5 +1,5 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
-const LocaleContext = React.createContext<string>('en');
+const LocaleContext = createContext<string>('en');
 
 export default LocaleContext;
