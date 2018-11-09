@@ -1,4 +1,4 @@
-import { Layout } from '../primitives';
+import Layout from '../Layout';
 
 export interface Container {
 

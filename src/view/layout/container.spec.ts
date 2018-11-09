@@ -1,4 +1,4 @@
-import LayoutType, {
+import ContainerType, {
     AbsoluteTypeName,
     AccordionTypeName,
     AnchorTypeName,
@@ -16,7 +16,7 @@ import LayoutType, {
     VBoxTypeName
 } from './index';
 
-function testType(layout: LayoutType[keyof LayoutType]) {
+function testType(layout: ContainerType[keyof ContainerType]) {
     switch (layout.type) {
         case AbsoluteTypeName:
             return 'Absolute';
@@ -51,7 +51,7 @@ function testType(layout: LayoutType[keyof LayoutType]) {
     }
 }
 
-describe('layouts with correct type name', () => {
+describe('layout with correct type name', () => {
     expect(testType({ type: 'Absolute' })).toEqual('Absolute');
     expect(testType({ type: 'Accordion' })).toEqual('Accordion');
     expect(testType({ type: 'Anchor' })).toEqual('Anchor');

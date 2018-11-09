@@ -14,7 +14,7 @@ import { default as HBoxLayout } from './HBox';
 import { default as TableLayout } from './Table';
 import { default as VBoxLayout } from './VBox';
 
-export default interface LayoutType {
+export default interface ContainerType {
     Absolute: AbsoluteLayout;
     Accordion: AccordionLayout;
     Anchor: AnchorLayout;
