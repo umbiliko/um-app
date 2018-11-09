@@ -1,5 +1,9 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
@@ -18,7 +22,12 @@
       ]
     },
     "quotemark": [
+      true,
       "single"
+    ],
+    "whitespace": [
+      true,
+      "check-module"
     ]
   }
 }

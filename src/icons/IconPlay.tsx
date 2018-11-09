@@ -1,4 +1,4 @@
+import Icon from "@material-ui/core/Icon";
 import * as React from 'react';
-import Icon from '@material-ui/core/Icon';
 
 export default () => (<Icon>play</Icon>);

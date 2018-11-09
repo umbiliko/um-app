@@ -7,7 +7,7 @@
     "@material-ui/core": "^3.4.0",
     "@material-ui/icons": "^3.0.1",
     "immutable": "^4.0.0-rc.12",
-    "ntt-flow": "0.0.5",
+    "ntt-flow": "0.0.12",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
     "react-router": "^4.4.0-beta.5",

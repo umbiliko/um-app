@@ -14,7 +14,7 @@ export const Route1 = () => (<Route path="/path" component={Page} />);
 
 // render — A function that returns a React element [5]. It will be called when the
 // path matches. This is similar to component, but is useful for inline rendering
-// and passing extra props to the element.
+// and passing extra domains to the element.
 export const Route2 = () => (
     <Route
         path="/path"
@@ -26,7 +26,7 @@ export const Route2 = () => (
     />
 );
 
-// children — A function that returns a React element. Unlike the prior two props, this
+// children — A function that returns a React element. Unlike the prior two domains, this
 // will always be rendered, regardless of whether the route’s path matches the current
 // location.
 export const Route3 = () => (

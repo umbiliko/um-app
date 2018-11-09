@@ -1,7 +1,7 @@
-declare type Omit<T, K extends keyof any> = T extends any ? Pick<T, Exclude<keyof T, K>> : never;
+import 'ntt-flow/dist/typings';
 
 export namespace global {
-    type EffectResult = (() => void) | void;
+
 
     /**
      * Remove properties `K` from `T`.

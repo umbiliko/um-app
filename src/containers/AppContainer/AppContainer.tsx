@@ -2,10 +2,11 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { Component, useContext, useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
-import Spinner from 'src/components/Spinner';
+// import Spinner from 'src/components/Spinner';
 import { LocaleContext, ThemeContext } from 'src/context';
 import useFormInput from 'src/effects/useFormInput';
 import useMedia from 'src/effects/useMedia';
+// import { SimpleObject } from 'ntt-flow';
 
 export interface AppProps extends RouteComponentProps {
     name?: string;
@@ -17,9 +18,10 @@ export interface AppState {
 }
 
 export interface AppContext {
+    
 }
 
-const appContext = React.createContext<AppContext>({});
+const appContext = React.createContext<{ [key: string]: SimpleObject }>({});
 
 // https://medium.com/@baphemot/understanding-react-suspense-1c73b4b0b1e6
 export class AppContainer extends Component<AppProps, AppState> {
@@ -47,7 +49,7 @@ export class AppContainer extends Component<AppProps, AppState> {
     componentDidCatch() {
         // state updated are merged
         this.setState((state, props) => ({
-            // counter: state.counter + props.increment
+            // counter: state.counter + domains.increment
         }));
     }
 
