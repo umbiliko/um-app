@@ -1,7 +1,7 @@
 
 
 import { SnackbarContentVisual } from './SnackbarContentVisual';
-import { TransitionHandler, Transition } from './Transition';
+import { TransitionHandler, Transition } from '../primitives/Transition';
 import { ClickAwayListenerVisual } from './ClickAwayListener';
 import { Component, Visual } from '../primitives/index';
 

@@ -1,13 +1,12 @@
 import { Theme } from './Theme';
-import { Transition } from './Transition';
-import { Component, Visual } from '../primitives/index';
+import { Transition, Visual } from '../primitives';
 
-export interface ZoomVisual extends Transition {
-  theme?: Theme;
+export interface Zoom extends Transition {
+    theme?: Theme;
 }
 
-export const Key = '';
+export const ZoomKey = 'Zoom';
 
-export default interface Visual extends Visual<> {
-    type: typeof Key;
+export default interface ZoomVisual extends Visual<Zoom> {
+    type: typeof ZoomKey;
 }

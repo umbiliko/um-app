@@ -1,7 +1,7 @@
 
 import { ReferenceObject } from 'src/view/visuals/PopperVisual.js';
 import { PortalVisual } from './Portal';
-import { Transition } from './Transition';
+import { Transition } from '../primitives/Transition';
 import { Component, Visual } from '../primitives/index';
 
 export type PopperPlacementType =

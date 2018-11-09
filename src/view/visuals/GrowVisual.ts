@@ -1,5 +1,5 @@
 import { Theme } from './Theme';
-import { Transition } from './Transition';
+import { Transition } from '../primitives/Transition';
 import { Visual } from '../primitives';
 
 export interface Grow extends Omit<Transition, 'timeout'> {

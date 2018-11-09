@@ -1,5 +1,5 @@
 import { Theme } from './Theme';
-import { Transition } from './Transition';
+import { Transition } from '../primitives/Transition';
 import { Visual } from '../primitives/index';
 
 export interface Fade extends Transition {

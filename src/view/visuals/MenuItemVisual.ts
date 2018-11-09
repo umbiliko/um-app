@@ -1,17 +1,15 @@
-
-
-import { ListItemVisual } from './ListItemVisual';
+import { ListItem } from './ListItemVisual';
 import { Component, Visual } from '../primitives/index';
 
-export interface MenuItemVisual extends Component<ListItemVisual, MenuItemClassKey> {
-  component?: MenuItemVisual['type'];
-  role?: string;
+export interface MenuItem extends Component<ListItem, MenuItemClassKey> {
+    component?: 'div' | 'li';
+    role?: string;
 }
 
 export type MenuItemClassKey = 'root' | 'gutters' | 'selected';
 
-export const Key = '';
+export const MenuItemKey = 'MenuItem';
 
-export default interface Visual extends Visual<> {
-    type: typeof Key;
+export default interface MenuItemVisual extends Visual<MenuItem> {
+    type: typeof MenuItemKey;
 }

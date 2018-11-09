@@ -1,6 +1,6 @@
 import { Paper } from './PaperVisual';
 import { Modal } from './ModalVisual';
-import { TransitionHandler, Transition } from './Transition';
+import { TransitionHandler, Transition } from '../primitives/Transition';
 import { Component, Node, Visual } from '../primitives/index';
 
 export interface Dialog

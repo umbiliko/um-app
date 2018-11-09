@@ -1,6 +1,6 @@
 import { Component, Visual } from '../primitives/index';
 import { FadeVisual } from './FadeVisual';
-import { Transition } from './Transition';
+import { Transition } from '../primitives/Transition';
 import { HTMLDivElement } from './native/HtmlElementVisual';
 import { MouseEventHandler } from '../handlers/index';
 

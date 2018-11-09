@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { Node } from '../primitives/index';
+import { Node } from './index';
 
 export type EndHandler = (node: HTMLElement, done: () => void) => void;
 export type EnterHandler = (node: HTMLElement, isAppearing: boolean) => void;

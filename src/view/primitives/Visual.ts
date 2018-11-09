@@ -1,8 +1,8 @@
 import Key from './Key';
 
 export default interface Visual<P> {
-    type: string;
+    key?: Key;
     props: P;
-    key: Key | null;
+    type: string;
 }
 

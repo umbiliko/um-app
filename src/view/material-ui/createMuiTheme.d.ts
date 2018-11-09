@@ -6,7 +6,7 @@ import { Shadows } from './shadows';
 import { Shape, ShapeOptions } from './shape';
 import { Spacing, SpacingOptions } from './spacing';
 import { Transitions, TransitionsOptions } from './transitions';
-import { ZIndex, ZIndexOptions } from '../visuals/ZIndex';
+import { ZIndex, ZIndexOptions } from '../primitives/ZIndex';
 import { Overrides } from './overrides';
 import { ComponentsProps } from './props';
 

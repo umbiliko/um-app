@@ -1,16 +1,15 @@
-
-
-import { ListVisual, ListClassKey } from '../List';
+import { List, ListClassKey } from './ListVisual';
 import { Component, Visual } from '../primitives/index';
+import { KeyboardEventHandler } from '../handlers';
 
-export interface MenuListVisual extends Component<ListVisual, MenuListClassKey, 'onKeyDown'> {
-  onKeyDown?: React.ReactEventHandler<React.KeyboardEvent<any>>;
+export interface MenuList extends Component<List, MenuListClassKey, 'onKeyDown'> {
+    onKeyDown?: KeyboardEventHandler;
 }
 
 export type MenuListClassKey = ListClassKey;
 
-export const Key = '';
+export const MenuListKey = 'MenuList';
 
-export default interface Visual extends Visual<> {
-    type: typeof Key;
+export default interface MenuListVisual extends Visual<MenuList> {
+    type: typeof MenuListKey;
 }

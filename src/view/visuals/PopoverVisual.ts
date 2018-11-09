@@ -2,7 +2,7 @@
 
 import { PaperVisual } from './PaperVisual';
 import { ModalVisual } from './ModalVisual';
-import { TransitionHandler, Transition } from './Transition';
+import { TransitionHandler, Transition } from '../primitives/Transition';
 import { Component, Visual } from '../primitives/index';
 
 export interface PopoverOrigin {

@@ -2,7 +2,7 @@ import { PopoverVisual } from './PopoverVisual';
 import { MenuListVisual } from './MenuListVisual';
 import { PaperVisual } from './PaperVisual';
 
-import { TransitionHandler, Transition } from './Transition';
+import { TransitionHandler, Transition } from '../primitives/Transition';
 import { Component, Visual } from '../primitives/index';
 
 export interface MenuVisual
