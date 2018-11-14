@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import AbortController from 'abort-controller';
+import { useEffect, useState } from 'react';
 import Movie from './Movie';
 
 export default (id: number): Movie | null => {
@@ -6,9 +7,18 @@ export default (id: number): Movie | null => {
 
     useEffect(
         (): (() => void) | void => {
-            //setMovie(movieDetailsJson[id]);
+            const controller = new AbortController();
 
-            fetch(`/movies/${id}/details`)
+            controller.signal.addEventListener('abort', () => {
+                console.log('aborted!')
+            });
+
+            fetch(
+                `/movies/${id}/details`,
+                {
+                    method: 'get',
+                    signal: controller.signal
+                })
                 .then((response: Response): Promise<Movie> => {
                     if (!response.ok) {
                         throw new Error(response.statusText);
@@ -17,6 +27,8 @@ export default (id: number): Movie | null => {
                 })
                 .then((data: Movie) => setMovie(data))
                 .catch(err => console.log(err));
+
+            return controller.abort;
         },
         [id]
     );

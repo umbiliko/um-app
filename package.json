@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^3.4.0",
     "@material-ui/icons": "^3.0.1",
+    "abort-controller": "^1.0.2",
     "immutable": "^4.0.0-rc.12",
     "ntt-flow": "0.0.12",
     "ntt-view": "0.0.1",

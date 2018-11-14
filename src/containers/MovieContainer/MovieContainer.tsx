@@ -19,7 +19,7 @@ export default () => {
             {showDetail && current && (
                 <MovieDetails id={current.id} />
             )}
-            <Suspense fallback={<Spinner />}>
+            <Suspense fallback={<Spinner size="lg" />}>
                 <MovieListPage items={items} />
             </Suspense>
         </div>
