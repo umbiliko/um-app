@@ -1,6 +1,6 @@
 import 'ntt-flow/dist/typings';
 
-declare const fetch: (string) => Promise<any>;
+declare type EffectResult = void | (() => void);
 
 export namespace global {
 

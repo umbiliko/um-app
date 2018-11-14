@@ -1,6 +1,8 @@
-import { useEffect, useReducer } from 'react';
-import Movie, { MovieList } from './Movie';
-import {number} from "prop-types";
+/// <reference path="../../../typings/global.d.ts" />
+/// <reference path="../../../typings/index.d.ts" />
+import { useEffect, useReducer, useState } from 'react';
+import { MovieItem, MovieList } from './Movie';
+import * as React from 'react';
 
 const SHOW_DETAIL = 'SHOW_DETAIL';
 const HIDE_DETAIL = 'HIDE_DETAIL';
@@ -101,10 +103,12 @@ export default (page: number, currentId: number, detail: boolean) => {
     };
 
     const [state, dispatch] = useReducer<MoviewBoxState, MovieBoxAction>(reducer, initialState);
+    const [pageCache] = useState(new WeakMap<{ page: number }, MovieList>());
+    const [goToCache] = useState(new WeakMap<MovieIndex, { goTo: React.MouseEventHandler }>());
     const hideDetail = () => dispatch({ type: HIDE_DETAIL });
     const goBackward = () => dispatch({ type: GO_BACKWARD });
     const goForward = () => dispatch({ type: GO_FORWARD });
-    const goTo = (index: number) => dispatch({ index, type: GO_TO });
+    const goTo = (index: number, page: number) => dispatch({ index, type: GO_TO });
     const showDetail = () => dispatch({ type: SHOW_DETAIL });
     //const progress = () => dispatch({ type: PROGRESS});
     // const setPage = (index: number; items: MovieList) => dispatch({ index, items, type: SET_PAGE });
@@ -113,25 +117,35 @@ export default (page: number, currentId: number, detail: boolean) => {
         (): EffectResult => {
             //setMovie(movieDetailsJson[id]);
 
-            fetch(`/movies?page=${page}`)
-                .then((response: Response): Promise<MovieList> => {
-                    if (!response.ok) {
-                        throw new Error(response.statusText);
-                    }
-                    return response.json();
-                })
-                .then((data: MovieList) => setPage(page, data))
-                .catch(err => console.log(err));
+            if (!pageCache.has({ page })) {
+                fetch(`/movies?page=${page}`)
+                    .then((response: Response): Promise<MovieList> => {
+                        if (!response.ok) {
+                            throw new Error(response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then((data: MovieList) => pageCache.set({ page }, data))
+                    .catch(err => console.log(err));
+            }
         },
         [page]
     );
 
     return {
+        hideDetail,
         goBackward,
         goForward,
         goTo,
-        pause: showDetail,
-        play: hideDetail,
+        showDetail,
+        page,
+        items: pageCache.get({ page })!.map((item: MovieItem, index: number) => {
+            const key = { id: item.id, index, page };
+            if (!goToCache.has(key)) {
+                goToCache.set(key, { goTo: () => goTo(index, page) });
+            }
+            return { ...item, onClick: goToCache.get(key)!.goTo }
+        }),
         state
     };
 };
