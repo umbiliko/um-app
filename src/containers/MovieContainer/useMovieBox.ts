@@ -10,7 +10,7 @@ const HIDE_DETAIL = 'HIDE_DETAIL';
 const GO_BACKWARD = 'GO_BACKWARD';
 const GO_FORWARD = 'GO_FORWARD';
 const GO_TO = 'GO_TO';
-const LOAD_PAGE = 'LOAD_PAGE';
+const TOGGLE_DETAIL = 'TOGGLE_DETAIL';
 
 export interface MovieIndex {
     id: number;
@@ -45,10 +45,8 @@ export interface MovieMoxActions {
         index: number;
         type: typeof GO_TO;
     },
-    SET_PAGE: {
-        index: number;
-        items: MovieList;
-        type: typeof LOAD_PAGE;
+    TOGGLE_DETAIL: {
+        type: typeof TOGGLE_DETAIL;
     }
 }
 
@@ -86,18 +84,22 @@ export default (page: number, currentId: number, detail: boolean) => {
 
                     showDetail: false
                 };
-            }
+            };
             /*case PROGRESS: return {
                 ...state,
                 currentId: (state.currentId + 1) % length,
                 // isPlaying: true,
                 // takeFocus: false
             };*/
-
             case SHOW_DETAIL: return {
                 ...state,
                 showDetail: true
             };
+            case TOGGLE_DETAIL: return {
+                ...state,
+                showDetail: !state.showDetail
+            };
+
             default: return state;
         }
     };
@@ -110,6 +112,7 @@ export default (page: number, currentId: number, detail: boolean) => {
     const goForward = () => dispatch({ type: GO_FORWARD });
     const goTo = (index: number, page: number) => dispatch({ index, type: GO_TO });
     const showDetail = () => dispatch({ type: SHOW_DETAIL });
+    const toggleDetail = () => dispatch({ type: TOGGLE_DETAIL });
     //const progress = () => dispatch({ type: PROGRESS});
     // const setPage = (index: number; items: MovieList) => dispatch({ index, items, type: SET_PAGE });
 
@@ -137,8 +140,6 @@ export default (page: number, currentId: number, detail: boolean) => {
         goBackward,
         goForward,
         goTo,
-        showDetail,
-        page,
         items: pageCache.get({ page })!.map((item: MovieItem, index: number) => {
             const key = { id: item.id, index, page };
             if (!goToCache.has(key)) {
@@ -146,6 +147,9 @@ export default (page: number, currentId: number, detail: boolean) => {
             }
             return { ...item, onClick: goToCache.get(key)!.goTo }
         }),
-        state
+        page,
+        showDetail,
+        state,
+        toggleDetail
     };
 };
