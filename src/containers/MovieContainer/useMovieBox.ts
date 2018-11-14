@@ -1,5 +1,6 @@
 /// <reference path="../../../typings/global.d.ts" />
 /// <reference path="../../../typings/index.d.ts" />
+import AbortController from 'abort-controller';
 import { useEffect, useReducer, useState } from 'react';
 import { MovieItem, MovieList } from './Movie';
 import * as React from 'react';
@@ -113,15 +114,25 @@ export default (page: number, currentId: number, detail: boolean) => {
     const goTo = (index: number, page: number) => dispatch({ index, type: GO_TO });
     const showDetail = () => dispatch({ type: SHOW_DETAIL });
     const toggleDetail = () => dispatch({ type: TOGGLE_DETAIL });
-    //const progress = () => dispatch({ type: PROGRESS});
     // const setPage = (index: number; items: MovieList) => dispatch({ index, items, type: SET_PAGE });
 
     useEffect(
         (): EffectResult => {
-            //setMovie(movieDetailsJson[id]);
-
             if (!pageCache.has({ page })) {
-                fetch(`/movies?page=${page}`)
+
+                const controller = new AbortController();
+                /*
+                controller.signal.addEventListener('abort', () => {
+                    console.log('aborted!')
+                });
+                */
+                fetch(
+                    `/movies?page=${page}`,
+                    {
+                        method: 'get',
+                        signal: controller.signal;
+                    }
+                )
                     .then((response: Response): Promise<MovieList> => {
                         if (!response.ok) {
                             throw new Error(response.statusText);
@@ -130,6 +141,8 @@ export default (page: number, currentId: number, detail: boolean) => {
                     })
                     .then((data: MovieList) => pageCache.set({ page }, data))
                     .catch(err => console.log(err));
+
+                return controller.abort;
             }
         },
         [page]

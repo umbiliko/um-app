@@ -1,6 +1,7 @@
 import { fromJS } from 'immutable';
 import { useState } from 'react';
 import useImmutableState from './useImmutableState';
+import { isArray } from 'util';
 
 function useForm<S extends SimpleObject> (initialState: S | null = null) {
     const [original, setState] = useState(initialState);

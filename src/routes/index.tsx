@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { lazy, Suspense, createFactory } from 'react';
+import { lazy, Suspense } from 'react';
 // https://scotch.io/bar-talk/whats-new-in-react-166
 const OtherComponent = lazy((): Promise<any> => import('./examples'));
 const AnotherComponent = lazy((): Promise<any> => import('./examples'));

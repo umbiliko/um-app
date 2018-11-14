@@ -1,5 +1,9 @@
-import { createContext } from 'react';
+import { createBrowserHistory } from 'history';
+import {createContext} from 'react';
+import { RouterProps } from 'react-router';
 
-const context = createContext({});
+export const history = createBrowserHistory();
+
+const context = createContext<RouterProps>({ history });
 
 export default context;

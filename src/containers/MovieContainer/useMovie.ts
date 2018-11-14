@@ -9,9 +9,11 @@ export default (id: number): Movie | null => {
         (): (() => void) | void => {
             const controller = new AbortController();
 
+            /*
             controller.signal.addEventListener('abort', () => {
                 console.log('aborted!')
             });
+            */
 
             fetch(
                 `/movies/${id}/details`,
