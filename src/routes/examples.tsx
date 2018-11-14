@@ -28,7 +28,7 @@ export const Route2 = () => (
 
 // children — A function that returns a React element. Unlike the prior two domains, this
 // will always be rendered, regardless of whether the route’s path matches the current
-// location.
+// index.
 export const Route3 = () => (
     <Route
         path="/path"

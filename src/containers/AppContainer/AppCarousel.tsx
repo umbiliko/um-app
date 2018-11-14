@@ -16,9 +16,8 @@ import {
     SlideNavItem,
     Slides
 } from 'src/containers/Carousel';
-import useCarousel from 'src/effects/useCarousel';
+import useCarousel from 'src/containers/Carousel/useCarousel';
 import { IconBackward, IconForward, IconPause, IconPlay } from 'src/icons';
-
 
 const SLIDE_DURATION = 3000;
 
@@ -89,7 +88,7 @@ export default function AppCarousel(props: CarouselProps) {
             <LinearProgress
                 animate={state.isPlaying}
                 duration={SLIDE_DURATION}
-                key={state.currentIndex + state.isPlaying}
+                key={`${state.currentIndex}-${state.isPlaying}`}
             />
             <VisuallyHidden>
                 <Alert>

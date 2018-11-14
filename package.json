@@ -8,6 +8,7 @@
     "@material-ui/icons": "^3.0.1",
     "immutable": "^4.0.0-rc.12",
     "ntt-flow": "0.0.12",
+    "ntt-view": "0.0.1",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
     "react-router": "^4.4.0-beta.5",
@@ -22,11 +23,11 @@
   "devDependencies": {
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.2",
-    "@types/react": "^16.4.18",
+    "@types/react": "^16.7.3",
     "@types/react-dom": "^16.0.9",
     "@types/react-router": "^4.4.0",
     "@types/react-router-dom": "^4.3.1",
-    "react-scripts-ts": "3.1.0",
+    "react-scripts-ts": "^4.0.8",
     "typescript": "^3.1.6"
   }
 }

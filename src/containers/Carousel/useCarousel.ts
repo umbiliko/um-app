@@ -13,7 +13,7 @@ export interface CarouselState {
     takeFocus: boolean;
 }
 
-export interface CarouselAction {
+export interface CarouselActions {
     PAUSE: {
         type: typeof PAUSE;
     };
@@ -35,6 +35,8 @@ export interface CarouselAction {
     }
 }
 
+export type CarouselAction = CarouselActions[keyof CarouselActions];
+
 const initialState: CarouselState = {
     currentIndex: 0,
     isPlaying: false,
@@ -43,7 +45,7 @@ const initialState: CarouselState = {
 
 function useCarousel(length: number, duration: number) {
 
-    const reducer = (state: CarouselState, action: CarouselAction[keyof CarouselAction]): CarouselState => {
+    const reducer = (state: CarouselState, action: CarouselAction): CarouselState => {
         switch (action.type) {
             case GO_BACKWARD: return {
                 ...state,
@@ -83,7 +85,7 @@ function useCarousel(length: number, duration: number) {
         }
     };
 
-    const [state, dispatch] = useReducer<CarouselState>(reducer, initialState);
+    const [state, dispatch] = useReducer<CarouselState, CarouselAction>(reducer, initialState);
     const goBackward = () => dispatch({ type: GO_BACKWARD });
     const goForward = () => dispatch({ type: GO_FORWARD });
     const goTo = (index: number) => dispatch({ index, type: GO_TO });
@@ -91,7 +93,7 @@ function useCarousel(length: number, duration: number) {
     const play = () => dispatch({ type: PLAY });
     const progress = () => dispatch({ type: PROGRESS});
 
-    useEffect((): (() => void) | void => {
+    useEffect((): EffectResult => {
         if (state.isPlaying) {
             const timeout = setTimeout(progress, duration);
             return () => clearTimeout(timeout);

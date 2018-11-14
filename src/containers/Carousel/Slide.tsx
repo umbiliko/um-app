@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useImperativeMethods, useRef } from 'react';
 
 export interface SlideProps extends React.HTMLAttributes<HTMLLIElement> {
     id: string;
@@ -16,13 +16,20 @@ export default function Slide({
     takeFocus,
     title,
     children
-                               }: SlideProps) {
-
-    const ref = useRef();
+}: SlideProps) {
+    const ref = useRef<React.AnchorHTMLAttributes<HTMLAnchorElement>>(null);
     useEffect(
         () => {
+
             if (isCurrent && takeFocus) {
-                ref.current.focus();
+                // useImperativeMethods customizes the instance value that is exposed to parent components when using ref.
+                // As always, imperative code using refs should be avoided in most cases.
+                /*useImperativeMethods(ref, () => ({
+                    focus: () => {
+                        inputRef!.current!.focus();
+                    }
+                }));*/
+                ref!.current!.focus!();
             }
         },
         [isCurrent, takeFocus]
