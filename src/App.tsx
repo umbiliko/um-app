@@ -1,14 +1,26 @@
 import * as React from 'react';
+import { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import AppContainer from "./containers/AppContainer";
-
+import AppContainer from './containers/AppContainer';
+import Spinner from './components/Spinner';
 import logo from './logo.svg';
+
+// suspense can be used for assets:
+// * audio
+// * components
+// * fonts
+// * images
+// * script tags
+// * style sheets
+// * videos
+const HomePage = React.lazy(() => import ('./pages/home/HomeContainer'));
 
 function App() {
     return (
         <div className="App">
-            <Router>
+            <Suspense fallback={<Spinner size="xl" />}>
+
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Welcome to React</h1>
@@ -20,8 +32,14 @@ function App() {
                     <div>
                         App Content
                     </div>
+                    <Router>
+                        <Nav default>
+                            <HomePage path="/" />
+                        </Nav>
+                    </Router>
                 </AppContainer>
-            </Router>
+
+            </Suspense>
         </div>
     );
 }

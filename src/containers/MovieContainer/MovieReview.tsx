@@ -1,6 +1,7 @@
 import * as React from 'react';
+import Movie from './Movie';
 
-export default () => {
+export default (props: Movie) => {
     return (
         <div></div>
     );

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 /* only rerenders if domains change */
 const Spinner = React.memo(
-    (props: { size: 'sm' | 'md' | 'lg' | 'xl' }) => {
+    (props: { size: number | 'sm' | 'md' | 'lg' | 'xl' }) => {
         return (
             <div>{"Loading..."}</div>
         );

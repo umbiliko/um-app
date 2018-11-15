@@ -1,7 +1,8 @@
 import * as React from 'react';
+import Img from '../../components/Img';
 
 export default (props: { src: string }) => {
     return (
-        <img src={props.src} />
+        <Img src={props.src} alt="poster" />
     );
 };

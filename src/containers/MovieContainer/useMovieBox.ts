@@ -130,7 +130,7 @@ export default (page: number, currentId: number, detail: boolean) => {
                     `/movies?page=${page}`,
                     {
                         method: 'get',
-                        signal: controller.signal;
+                        signal: controller.signal
                     }
                 )
                     .then((response: Response): Promise<MovieList> => {
