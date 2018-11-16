@@ -1,5 +1,5 @@
 {
-  "name": "@um-app",
+  "name": "um-react-app",
   "version": "0.0.1",
   "description": "User Module application",
   "private": true,
@@ -11,11 +11,10 @@
     "ntt-flow": "0.0.12",
     "ntt-view": "0.0.1",
     "react": "^16.7.0-alpha.0",
-    "react-cache": "^2.0.0-alpha.1",
     "react-dom": "^16.7.0-alpha.0",
     "react-router": "^4.4.0-beta.5",
     "react-router-dom": "^4.3.1",
-    "the-platform": "^0.9.3"
+    "um-react-core": "0.0.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",

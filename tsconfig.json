@@ -30,6 +30,7 @@
     "typings"
   ],
   "typeRoots" : [
+    "./typings",
     "../typings",
     "./node_modules/@types/",
     "../node_modules/@types/"
