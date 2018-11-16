@@ -1,5 +1,5 @@
 {
-  "name": "@um/app",
+  "name": "@um-app",
   "version": "0.0.1",
   "description": "User Module application",
   "private": true,

@@ -1,9 +1,10 @@
 /// <reference path="../../../typings/global.d.ts" />
 /// <reference path="../../../typings/index.d.ts" />
 import AbortController from 'abort-controller';
+import * as React from 'react';
+import { Img } from 'the-platform';
 import { useEffect, useReducer, useState } from 'react';
 import { MovieItem, MovieList } from './Movie';
-import * as React from 'react';
 
 const SHOW_DETAIL = 'SHOW_DETAIL';
 const HIDE_DETAIL = 'HIDE_DETAIL';

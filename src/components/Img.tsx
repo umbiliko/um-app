@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { unstable_createResource as createResource } from 'react-cache';
+// ^- invalidation is not ready
 
 // https://github.com/palmerhq/the-platform
 

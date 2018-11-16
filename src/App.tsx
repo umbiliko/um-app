@@ -6,6 +6,7 @@ import AppContainer from './containers/AppContainer';
 import Spinner from './components/Spinner';
 import logo from './logo.svg';
 
+// Jared Palmer on Suspense: https://youtu.be/SCQgE4mTnjU
 // suspense can be used for assets:
 // * audio
 // * components
