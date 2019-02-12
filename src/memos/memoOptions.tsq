@@ -1,0 +1,9 @@
+import { useMemo } from 'react';
+
+const memoOptions = useMemo(() => options, Object.entries(options).flat())
+return useMemo(() => ({
+    location,
+    match: memoOptions.path
+        ? matchPath(location.pathname, memoOptions)
+        : context.match
+}), [location, memoOptions.path ? memoOptions : context.match]);
